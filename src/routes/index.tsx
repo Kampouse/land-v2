@@ -1,7 +1,6 @@
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { initCanvas } from "~/utils/render";
 import { component$, useOnDocument, useOnWindow, useSignal, $ } from "@builder.io/qwik";
-import { GithubLinkRow, XLinkRow } from "~/components/content";
 import { ProfilePicture } from "~/components/picture";
 
 export default component$(() => {
@@ -67,10 +66,7 @@ export default component$(() => {
           </div >
         </div >
         <section data-section="social" class={`max - w - xl z - 10 text - center py - 6 sm: py - 10 pb - 0 transition - all duration - 1000 delay - 200 transform ${sectionsVisible.value.social || isVisible.value ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} `}>
-          <div class="flex space-x-4 justify-center">
-            <XLinkRow />
-            <GithubLinkRow />
-          </div>
+
         </section>
         <section data-section="portfolio" class={`max - w - 4xl w - full mx - 4 sm: mx - 6 lg: mx - 8 z - 10 backdrop - blur - sm bg - xy - black - secondary / 30 p - 6 sm: p - 8 rounded - lg transition - all duration - 1000 delay - 400 transform ${sectionsVisible.value.portfolio || isVisible.value ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} `}>
         </section>

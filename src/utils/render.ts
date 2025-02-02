@@ -1,59 +1,52 @@
-
 import { $ } from "@builder.io/qwik";
 
 export const initCanvas = $((canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
-  const resizeCanvas = () => {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  };
-
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  let animationFrame: number;
   const stars: Array<{ x: number, y: number, size: number, brightness: number, speed: number, color: string, pulseSpeed: number, pulsePhase: number, nebulosity: number }> = [];
   const starConfig = {
-    maxStars: window.innerWidth < 768 ? 150 : 300,
+    maxStars: Math.floor((window.innerWidth < 768) ? (canvas.width * canvas.height) / 6000 : (canvas.width * canvas.height) / 4500),
     colors: [
-      '#00ffff', // Cyan
-      '#4CC2FB', // Electric blue
-      '#7de486', // Neon green
-      '#FF00FF', // Magenta
-      '#08e7c5', // Turquoise
-      '#22c942', // Bright green
-      '#4788CC', // Deep blue
-      '#FF1493', // Deep pink
-      '#FF4500', // Orange red
-      '#FFD700'  // Gold
+      '#4cc2fb', // Bold blue
+      '#7de486', // XY green accent
+      '#85b8ff', // Blue lighter
+      '#08e7c5', // Cyan
+      '#22c942', // Neon green
+      '#2f81f7', // Blue darker
+      '#9cdcfe', // Baby blue
+      '#7ce184', // Light neon green
+      '#ff69b4', // Hot pink
+      '#ff1493', // Deep pink
+      '#c678dd', // Purple
+      '#da70d6', // Orchid
+      '#9370db', // Medium purple
+      '#8a2be2', // Blue violet
     ],
     rarity: {
-      meteor: 0.90,
+      meteor: 0.95,
       nebula: 0.98,
-      pulsar: 0.85
+      pulsar: 0.90
     },
     size: {
-      nebula: { min: window.innerWidth < 768 ? 2 : 3, max: window.innerWidth < 768 ? 6 : 8 },
-      meteor: { min: window.innerWidth < 768 ? 1 : 2, max: window.innerWidth < 768 ? 3 : 5 },
-      pulsar: { min: window.innerWidth < 768 ? 1 : 2, max: window.innerWidth < 768 ? 4 : 6 },
-      normal: { min: window.innerWidth < 768 ? 0.5 : 1, max: window.innerWidth < 768 ? 2 : 3 }
+      nebula: { min: Math.max(2, canvas.width / 384), max: Math.max(6, canvas.width / 96) },
+      meteor: { min: Math.max(1, canvas.width / 768), max: Math.max(3, canvas.width / 154) },
+      pulsar: { min: Math.max(1, canvas.width / 768), max: Math.max(4, canvas.width / 192) },
+      normal: { min: Math.max(0.5, canvas.width / 1536), max: Math.max(2, canvas.width / 384) }
     },
     speed: {
-      meteor: { min: 0.005, max: window.innerWidth < 768 ? 1 : 1.5 },
-      pulsar: { min: 0.3, max: 0.5 },
-      normal: { min: 0.02, max: 0.1 }
+      meteor: { min: 0.03, max: Math.min(1.2, canvas.width / 512) },
+      pulsar: { min: 0.2, max: 0.4 },
+      normal: { min: 0.01, max: 0.08 }
     },
-    brightness: { min: 0.5, max: 1.0 },
+    brightness: { min: 0.6, max: 1.0 },
     pulse: {
-      pulsar: { min: 0.004, max: 0.01 },
-      normal: { min: 0.0005, max: 0.0015 }
+      pulsar: { min: 0.004, max: 0.008 },
+      normal: { min: 0.0005, max: 0.001 }
     },
-    nebulosity: { min: 0.4, max: 0.9 },
-    trailPersistence: 1.0,
-    verticalMovement: 0.15,
-    pulseIntensity: 0.4,
-    glowSize: window.innerWidth < 768 ? 2 : 3
+    nebulosity: { min: 0.3, max: 0.7 },
+    trailPersistence: 0.95,
+    verticalMovement: 0.12,
+    pulseIntensity: 0.5,
+    glowSize: Math.max(2.5, canvas.width / 384)
   };
-
   const createStar = () => {
     const isMeteor = Math.random() > starConfig.rarity.meteor;
     const isNebula = Math.random() > starConfig.rarity.nebula;
@@ -91,6 +84,29 @@ export const initCanvas = $((canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
       nebulosity: isNebula ? randomInRange(starConfig.nebulosity.min, starConfig.nebulosity.max) : 0
     };
   };
+
+
+
+  const resizeCanvas = () => {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    // Recreate stars with appropriate density for new size
+    stars.length = 0;
+    starConfig.maxStars = Math.floor((canvas.width * canvas.height) / 3000);
+    for (let i = 0; i < starConfig.maxStars; i++) {
+      stars.push(createStar());
+    }
+  };
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  let animationFrame: number;
+
+
+
+
 
   for (let i = 0; i < starConfig.maxStars; i++) {
     stars.push(createStar());
@@ -164,6 +180,8 @@ export const initCanvas = $((canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
   animationFrame = requestAnimationFrame(animate);
   return () => {
     window.removeEventListener('resize', resizeCanvas);
-    cancelAnimationFrame(animationFrame);
+    if (typeof animationFrame === 'number') {
+      cancelAnimationFrame(animationFrame);
+    }
   };
 });
