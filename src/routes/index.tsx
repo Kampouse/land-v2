@@ -56,8 +56,7 @@ export default component$(() => {
             </div>
           </div>
         </section>
-
-        <section class="min-h-[90vh] w-screen flex md:items-center md:justify-center items-start justify-start snap-start px-4 pt-8 md:pt-0">
+        <section class="min-h-[92vh] w-screen flex md:items-center md:justify-center items-start justify-start snap-start px-4 pt-8 md:pt-0">
           <div data-section="about" class="w-full max-w-4xl z-10 flex flex-col items-center backdrop-blur-sm bg-xy-black-secondary/30 rounded-lg p-4 sm:p-8">
             <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-xy-cyan mb-4 sm:mb-6">About Me</h2>
             <p class="text-xy-muted text-base sm:text-lg leading-relaxed text-center max-w-2xl px-2">
@@ -78,8 +77,56 @@ export default component$(() => {
                 <span class="text-xy-muted text-xs sm:text-sm">Lines of Code</span>
               </div>
             </div>
+            <div
+              class="absolute -bottom-16 transform -translate-x-1/2 animate-bounce cursor-pointer bg-xy-black-secondary/70 p-3 rounded-full hover:bg-xy-black-secondary/90 transition-colors duration-300"
+              onClick$={() => {
+                const nextSection = document.querySelector('[data-section="projects"]');
+                nextSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              aria-label="Scroll to Projects section"
+            >
+              <svg class="w-6 h-6 sm:w-8 sm:h-8 text-xy-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
         </section>
+
+        <section class="min-h-[95vh] w-screen flex md:items-center md:justify-center items-start justify-start snap-start px-4 pt-8 md:pt-0">
+          <div data-section="projects" class="w-full max-w-4xl z-10 flex flex-col items-center backdrop-blur-sm bg-xy-black-secondary/30 rounded-lg p-4 sm:p-8">
+            <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-xy-cyan mb-4 sm:mb-6">Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+              <div class="flex flex-col bg-xy-black-primary/50 rounded-lg overflow-hidden">
+                <div class="h-48 relative">
+                  <img src="https://via.placeholder.com/400x300" alt="Project 1" class="absolute inset-0 w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                  <h3 class="text-xy-green-accent font-bold mb-2">Project One</h3>
+                  <p class="text-xy-muted text-sm">A brief description of the first project and its key features.</p>
+                </div>
+              </div>
+              <div class="flex flex-col bg-xy-black-primary/50 rounded-lg overflow-hidden">
+                <div class="h-48 relative">
+                  <img src="https://via.placeholder.com/400x300" alt="Project 2" class="absolute inset-0 w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                  <h3 class="text-xy-green-accent font-bold mb-2">Project Two</h3>
+                  <p class="text-xy-muted text-sm">A brief description of the second project and its key features.</p>
+                </div>
+              </div>
+              <div class="flex flex-col bg-xy-black-primary/50 rounded-lg overflow-hidden">
+                <div class="h-48 relative">
+                  <img src="https://via.placeholder.com/400x300" alt="Project 3" class="absolute inset-0 w-full h-full object-cover" />
+                </div>
+                <div class="p-4">
+                  <h3 class="text-xy-green-accent font-bold mb-2">Project Three</h3>
+                  <p class="text-xy-muted text-sm">A brief description of the third project and its key features.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   );
