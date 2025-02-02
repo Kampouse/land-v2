@@ -22,14 +22,12 @@ export const ProfilePicture = component$(() => {
         height={150}
       />
       <div class="absolute inset-0 w-full h-full scale-100 sm:scale-[1.5] md:scale-[2]">
-
-        <a href="https://www.linkedin.com/in/jemartel/" target="_blank" class="absolute cursor-pointer left-0 top-1/2 -translate-x-16 sm:-translate-x-14 md:-translate-x-5 -translate-y-1/2 animate-[float_3s_ease-in-out_infinite_1s] hover:text-xy-green-accent transition-colors">
+        <a href="https://www.linkedin.com/in/jemartel/" target="_blank" class="absolute cursor-pointer left-0 top-1/2 -translate-x-12 sm:-translate-x-10 md:-translate-x-12 -translate-y-1/2 animate-[float_3s_ease-in-out_infinite_1s] hover:text-xy-green-accent transition-colors">
           <icon.LinkedinIcon class="w-8 h-8 sm:w-6 sm:h-6 md:w-8 md:h-8 text-xy-green-accent" />
         </a>
-        <a href="https://github.com/Kampouse" target="_blank" class="absolute cursor-pointer right-0 top-1/2 translate-x-16 sm:translate-x-0 md:translate-x-5 -translate-y-1/2 animate-[float_3s_ease-in-out_infinite_1.5s] hover:text-xy-green-accent transition-colors">
+        <a href="https://github.com/Kampouse" target="_blank" class="absolute cursor-pointer right-0 top-1/2 translate-x-12 sm:translate-x-10 md:translate-x-12 -translate-y-1/2 animate-[float_3s_ease-in-out_infinite_1.5s] hover:text-xy-green-accent transition-colors">
           <icon.GithubIcon class="w-8 h-8 sm:w-6 sm:h-6 md:w-8 md:h-8 text-xy-green-accent" />
         </a>
-
       </div>
     </div>
   )
