@@ -1,38 +1,29 @@
-import { initCanvas } from "~/utils/render";
-import { component$, useOnDocument, useSignal, $ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import IntroSection from "~/routes/introSection";
 import AboutSection from "~/routes/aboutSection";
 import ProjectsSection from "~/routes/projectsSection";
+import { BlogSection } from "./blogSection";
 
 //------------------------------------------------------------------------------
 // Main Component
 //------------------------------------------------------------------------------
+
 export default component$(() => {
-  const canvasRef = useSignal<HTMLCanvasElement>();
-
-  const initCanvasEffect = $(() => {
-    const canvas = canvasRef.value;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    return initCanvas(canvas, ctx);
-  });
-
-  useOnDocument("DOMContentLoaded", initCanvasEffect);
-
   return (
-    <div class="relative min-h-screen w-full overflow-y-auto overflow-x-hidden bg-xy-black-secondary">
-      <div class="fixed inset-0 h-full w-full">
-        <canvas ref={canvasRef} class="h-full w-full" />
-      </div>
+    <main>
+      <div class="relative  w-full overflow-y-auto overflow-x-hidden">
+        <div class="py-24">
+          <IntroSection isVisible={true} />
+        </div>
 
-      <div class="relative flex w-full flex-col items-center">
-        <IntroSection isVisible={true} />
-        <AboutSection />
-        <ProjectsSection />
+        <div class="relative flex w-full flex-col items-center gap-12">
+          <AboutSection />
+          <ProjectsSection />
+          <BlogSection />
+        </div>
       </div>
-    </div>
+    </main>
   );
 });
 
