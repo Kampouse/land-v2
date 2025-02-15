@@ -1,0 +1,64 @@
+---
+title: Getting Started with Qwik
+date: 2023-12-01
+description: Learn how to build blazing fast websites with Qwik framework
+tag: Framework
+og:
+  image: https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F4d4d8dd8f7884e7cb48f446e65268ea6
+  image:alt: Getting started with Qwik framework tutorial
+---
+
+
+# Getting Started with Qwik
+
+Qwik is a new kind of web framework that can deliver instant loading web applications at any size or complexity. Let's explore how to get started with it.
+
+## Why Qwik?
+
+Qwik is designed to solve the JavaScript bundle size problem by introducing a new way of thinking about how we load and execute JavaScript in the browser.
+
+## Installation
+
+```bash
+npm create qwik@latest
+```
+
+## Basic Concepts
+
+### Components
+
+Qwik components are defined using the `component$` function:
+
+```tsx
+import { component$ } from '@builder.io/qwik';
+
+export default component$(() => {
+  return <div>Hello Qwik!</div>;
+});
+```
+
+### State Management
+
+Qwik provides powerful state management through signals:
+
+```tsx
+import { component$, useSignal } from '@builder.io/qwik';
+
+export default component$(() => {
+  const count = useSignal(0);
+
+  return (
+    <button onClick$={() => count.value++}>
+      Count: {count.value}
+    </button>
+  );
+});
+```
+
+## Next Steps
+
+- Explore Qwik City for routing
+- Learn about resource loading
+- Understand optimization techniques
+
+Stay tuned for more Qwik tutorials!
