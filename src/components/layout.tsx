@@ -44,7 +44,6 @@ export default component$(() => {
             href="/"
             class="flex items-center space-x-2 text-xl font-semibold text-xy-cyan hover:text-xy-green-accent"
           >
-
             <span>Jean's Site</span>
           </Link>
           <div class="flex items-center space-x-4">

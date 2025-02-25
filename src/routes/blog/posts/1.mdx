@@ -5,10 +5,8 @@ description: Learn how to build blazing fast websites with Qwik framework
 tag: Framework
 og:
   title: Getting Started with Qwik
-  description:  try qwik today
-
+  description: try qwik today
 ---
-
 
 # Getting Started with Qwik
 
@@ -31,7 +29,7 @@ npm create qwik@latest
 Qwik components are defined using the `component$` function:
 
 ```tsx
-import { component$ } from '@builder.io/qwik';
+import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return <div>Hello Qwik!</div>;
@@ -43,16 +41,12 @@ export default component$(() => {
 Qwik provides powerful state management through signals:
 
 ```tsx
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, useSignal } from "@builder.io/qwik";
 
 export default component$(() => {
   const count = useSignal(0);
 
-  return (
-    <button onClick$={() => count.value++}>
-      Count: {count.value}
-    </button>
-  );
+  return <button onClick$={() => count.value++}>Count: {count.value}</button>;
 });
 ```
 

@@ -12,8 +12,6 @@ tags:
 
 The landscape of web development is constantly evolving. Let's explore some current best practices and patterns.
 
-
-
 Breaking down large applications into smaller, manageable pieces:
 
 ```typescript
@@ -39,7 +37,7 @@ async function BlogPosts() {
   const posts = await db.posts.findMany();
   return (
     <ul>
-      {posts.map(post => (
+      {posts.map((post) => (
         <li key={post.id}>{post.title}</li>
       ))}
     </ul>
