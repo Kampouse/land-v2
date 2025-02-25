@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import IntroSection from "~/routes/introSection";
-import AboutSection from "~/routes/aboutSection";
-import ProjectsSection from "~/routes/projectsSection";
-import { BlogSection } from "./blogSection";
+import IntroSection from "~/components/introSection";
+import AboutSection from "~/components/aboutSection";
+import ProjectsSection from "~/components/projectsSection";
+import { BlogSection } from "../components/blogSection";
 
 //------------------------------------------------------------------------------
 // Main Component
