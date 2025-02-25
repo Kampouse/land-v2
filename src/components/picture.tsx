@@ -1,4 +1,5 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
+import ProfileImage from "/public/profile image.jpg?jsx";
 import * as icon from "lucide-qwik";
 export const ProfilePicture = component$(() => {
   useStyles$(`
@@ -26,12 +27,9 @@ export const ProfilePicture = component$(() => {
   return (
     <div class="relative">
       <div class="inline-block animate-[breathing_3s_ease-in-out_infinite] rounded-full border-4 border-xy-green-accent shadow-[0_0_30px_rgba(125,228,134,0.3)] transition-all duration-300 sm:border-[6px]">
-        <img
-          src="https://github.com/Kampouse/land/blob/main/public/cover.jpg?raw=true"
+        <ProfileImage
           alt="Jean Profile"
           class="relative z-10 h-36 w-36 scale-100 rounded-full sm:h-64 sm:w-64 md:h-48 md:w-48"
-          width={250}
-          height={250}
         />
       </div>
       <div class="absolute inset-0 h-full w-full scale-150  md:scale-[2]">
