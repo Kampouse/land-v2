@@ -1,52 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
-
-interface ProjectDetail {
-  name: string;
-  title: string;
-  description: string;
-  longDescription: string;
-  technologies: string[];
-  images: { src: string; alt: string }[];
-  demoUrl?: string;
-  githubUrl?: string;
-}
-
-// In a real app, this would come from an API or database
-const projectsData: Record<string, ProjectDetail> = {
-  "project-one": {
-    name: "project-one",
-    title: "Project One",
-    description:
-      "A brief description of the first project and its key features.",
-    longDescription: `
-      This is an extensive description of Project One. It goes into detail about
-      the challenges faced, solutions implemented, and the impact of the project.
-
-      The project aimed to solve specific problems and achieved notable results
-      through innovative approaches and careful consideration of user needs.
-    `,
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    images: [
-      {
-        src: "https://images.nightcafe.studio/ik-seo/jobs/tIn0SKf5naXab6dX3KyU/tIn0SKf5naXab6dX3KyU--0--jbxlc/a-better-tomorrow.jpg?tr=w-1600,c-at_max",
-        alt: "Project One Screenshot 1",
-      },
-      {
-        src: "https://images.nightcafe.studio/ik-seo/jobs/tIn0SKf5naXab6dX3KyU/tIn0SKf5naXab6dX3KyU--0--jbxlc/a-better-tomorrow.jpg?tr=w-1600,c-at_max",
-        alt: "Project One Screenshot 2",
-      },
-    ],
-    demoUrl: "https://demo.example.com",
-    githubUrl: "https://github.com/example/project-one",
-  },
-  // Add more projects as needed
-};
+import { projects } from "..";
 
 export default component$(() => {
   const location = useLocation();
   const projectName = location.params.name;
-  const project = projectsData[projectName];
+  const project = projects.find((p) => p.id === projectName);
 
   if (!project) {
     return (
@@ -60,13 +19,7 @@ export default component$(() => {
     <article class="min-h-screen">
       {/* Hero Section with Main Image */}
       <div class="relative mb-12 h-[60vh] w-full overflow-hidden">
-        <img
-          src={project.images[0].src}
-          alt={project.images[0].alt}
-          width={1600}
-          height={900}
-          class="h-full w-full rounded-lg border object-cover"
-        />
+        <project.image class="h-full w-full rounded-lg border object-cover" />
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-xy-black-primary"></div>
         <div class="absolute bottom-0 left-0 right-0 p-8">
           <div class="container mx-auto">

@@ -16,14 +16,11 @@ export default component$(() => {
             <Link
               href={`/projects/${project.id}`}
               key={project.id}
-              class="flex cursor-pointer flex-col overflow-hidden rounded-lg bg-xy-black-primary/50 "
+              class="border-1 flex cursor-pointer flex-col overflow-hidden rounded-lg border-transparent bg-xy-black-primary/50 transition-all duration-300 hover:border-xy-cyan hover:shadow-lg hover:shadow-xy-cyan/20"
             >
               <div class="relative h-48">
-                <img
-                  src={project.imageSrc}
+                <project.image
                   alt={project.imageAlt}
-                  height={192}
-                  width={256}
                   class="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
