@@ -12,33 +12,34 @@ export const initCanvas = $(
       pulseSpeed: number;
       pulsePhase: number;
       nebulosity: number;
+      colorWithAlpha?: { [key: string]: string };
     }> = [];
     const starConfig = {
       maxStars: Math.floor(
         window.innerWidth < 768
-          ? (canvas.width * canvas.height) / 6000
-          : (canvas.width * canvas.height) / 4500,
+          ? (canvas.width * canvas.height) / 8000 // Reduced density
+          : (canvas.width * canvas.height) / 6000,
       ),
       colors: [
-        "#4cc2fb", // Bold blue
-        "#7de486", // XY green accent
-        "#85b8ff", // Blue lighter
-        "#08e7c5", // Cyan
-        "#22c942", // Neon green
-        "#2f81f7", // Blue darker
-        "#9cdcfe", // Baby blue
-        "#7ce184", // Light neon green
-        "#ff69b4", // Hot pink
-        "#ff1493", // Deep pink
-        "#c678dd", // Purple
-        "#da70d6", // Orchid
-        "#9370db", // Medium purple
-        "#8a2be2", // Blue violet
+        "#4cc2fb",
+        "#7de486",
+        "#85b8ff",
+        "#08e7c5",
+        "#22c942",
+        "#2f81f7",
+        "#9cdcfe",
+        "#7ce184",
+        "#ff69b4",
+        "#ff1493",
+        "#c678dd",
+        "#da70d6",
+        "#9370db",
+        "#8a2be2",
       ],
       rarity: {
-        meteor: 0.95,
-        nebula: 0.98,
-        pulsar: 0.9,
+        meteor: 0.97, // Reduced meteors
+        nebula: 0.99, // Reduced nebulas
+        pulsar: 0.95, // Reduced pulsars
       },
       size: {
         nebula: {
@@ -74,6 +75,7 @@ export const initCanvas = $(
       pulseIntensity: 0.5,
       glowSize: Math.max(2.5, canvas.width / 384),
     };
+
     const createStar = () => {
       const isMeteor = Math.random() > starConfig.rarity.meteor;
       const isNebula = Math.random() > starConfig.rarity.nebula;
@@ -124,6 +126,9 @@ export const initCanvas = $(
             starConfig.pulse.normal.max,
           );
 
+      const color =
+        starConfig.colors[Math.floor(Math.random() * starConfig.colors.length)];
+
       return {
         x: Math.random() * canvas.width,
         y: isMeteor
@@ -135,25 +140,26 @@ export const initCanvas = $(
           starConfig.brightness.max,
         ),
         speed,
-        color:
-          starConfig.colors[
-            Math.floor(Math.random() * starConfig.colors.length)
-          ],
+        color,
         pulseSpeed,
         pulsePhase: Math.random() * Math.PI * 2,
         nebulosity: isNebula
           ? randomInRange(starConfig.nebulosity.min, starConfig.nebulosity.max)
           : 0,
+        colorWithAlpha: {
+          transparent: `${color}00`,
+          nebula: `${color}${Math.floor(isNebula ? 0.3 * 255 : 0)
+            .toString(16)
+            .padStart(2, "0")}`,
+        },
       };
     };
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-
-      // Recreate stars with appropriate density for new size
       stars.length = 0;
-      starConfig.maxStars = Math.floor((canvas.width * canvas.height) / 3000);
+      starConfig.maxStars = Math.floor((canvas.width * canvas.height) / 4000);
       for (let i = 0; i < starConfig.maxStars; i++) {
         stars.push(createStar());
       }
@@ -163,6 +169,9 @@ export const initCanvas = $(
     window.addEventListener("resize", resizeCanvas);
 
     let animationFrame: number;
+    let lastTime = performance.now();
+    const targetFPS = 60;
+    const frameInterval = 1000 / targetFPS;
 
     for (let i = 0; i < starConfig.maxStars; i++) {
       stars.push(createStar());
@@ -174,95 +183,103 @@ export const initCanvas = $(
       y: number,
       size: number,
     ) => {
-      ctx.save();
-      ctx.translate(x, y);
       ctx.beginPath();
-      ctx.arc(0, 0, size / 2, 0, Math.PI * 2);
+      ctx.arc(x, y, size / 2, 0, Math.PI * 2);
       ctx.fill();
-      ctx.restore();
     };
 
-    const animate = () => {
-      ctx.fillStyle = `rgba(27, 27, 27, ${starConfig.trailPersistence})`;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - lastTime;
 
-      stars.forEach((star) => {
-        star.x -= star.speed;
-        star.y += star.speed * starConfig.verticalMovement;
+      if (elapsed > frameInterval) {
+        lastTime = currentTime - (elapsed % frameInterval);
 
-        if (star.x < 0 || star.y > canvas.height) {
-          star.x = canvas.width;
-          star.y = Math.random() * canvas.height * 0.5;
-        }
+        ctx.fillStyle = `rgba(27, 27, 27, ${starConfig.trailPersistence})`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        const time = Date.now();
-        const basicPulse = Math.sin(time * star.pulseSpeed + star.pulsePhase);
-        const combinedPulse =
-          basicPulse * starConfig.pulseIntensity +
-          (1 - starConfig.pulseIntensity);
+        stars.forEach((star) => {
+          star.x -= star.speed;
+          star.y += star.speed * starConfig.verticalMovement;
 
-        if (star.speed > starConfig.speed.meteor.min) {
-          const gradient = ctx.createLinearGradient(
-            star.x + star.speed * 8,
-            star.y - star.speed * 0.5,
-            star.x,
-            star.y,
+          if (star.x < 0 || star.y > canvas.height) {
+            star.x = canvas.width;
+            star.y = Math.random() * canvas.height * 0.5;
+          }
+
+          const basicPulse = Math.sin(
+            currentTime * star.pulseSpeed + star.pulsePhase,
           );
-          gradient.addColorStop(0, `${star.color}00`);
-          gradient.addColorStop(
-            1,
-            `${star.color}${Math.floor(star.brightness * 0.6 * 255)
-              .toString(16)
-              .padStart(2, "0")}`,
-          );
+          const combinedPulse =
+            basicPulse * starConfig.pulseIntensity +
+            (1 - starConfig.pulseIntensity);
 
-          ctx.beginPath();
-          ctx.moveTo(star.x, star.y);
-          ctx.lineTo(star.x + star.speed * 8, star.y - star.speed * 0.5);
-          ctx.strokeStyle = gradient;
-          ctx.lineWidth = star.size * 0.8;
-          ctx.stroke();
-        }
+          if (star.speed > starConfig.speed.meteor.min) {
+            const gradient = ctx.createLinearGradient(
+              star.x + star.speed * 8,
+              star.y - star.speed * 0.5,
+              star.x,
+              star.y,
+            );
+            gradient.addColorStop(
+              0,
+              star.colorWithAlpha?.transparent || `${star.color}00`,
+            );
+            gradient.addColorStop(
+              1,
+              `${star.color}${Math.floor(star.brightness * 0.6 * 255)
+                .toString(16)
+                .padStart(2, "0")}`,
+            );
 
-        if (star.nebulosity > 0) {
-          const gradient = ctx.createRadialGradient(
-            star.x,
-            star.y,
-            0,
-            star.x,
-            star.y,
-            star.size * 4,
-          );
-          gradient.addColorStop(
-            0,
-            `${star.color}${Math.floor(star.nebulosity * 0.3 * 255)
-              .toString(16)
-              .padStart(2, "0")}`,
-          );
-          gradient.addColorStop(1, `${star.color}00`);
-          ctx.fillStyle = gradient;
-          ctx.fillRect(
-            star.x - star.size * 4,
-            star.y - star.size * 4,
-            star.size * 8,
-            star.size * 8,
-          );
-        }
+            ctx.beginPath();
+            ctx.moveTo(star.x, star.y);
+            ctx.lineTo(star.x + star.speed * 8, star.y - star.speed * 0.5);
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = star.size * 0.8;
+            ctx.stroke();
+          }
 
-        ctx.fillStyle = `${star.color}${Math.floor(
-          star.brightness * combinedPulse * 255,
-        )
-          .toString(16)
-          .padStart(2, "0")}`;
-        drawShape(ctx, star.x, star.y, star.size);
+          if (star.nebulosity > 0) {
+            const gradient = ctx.createRadialGradient(
+              star.x,
+              star.y,
+              0,
+              star.x,
+              star.y,
+              star.size * 4,
+            );
+            gradient.addColorStop(
+              0,
+              star.colorWithAlpha?.nebula || `${star.color}4D`,
+            );
+            gradient.addColorStop(
+              1,
+              star.colorWithAlpha?.transparent || `${star.color}00`,
+            );
+            ctx.fillStyle = gradient;
+            ctx.fillRect(
+              star.x - star.size * 4,
+              star.y - star.size * 4,
+              star.size * 8,
+              star.size * 8,
+            );
+          }
 
-        ctx.fillStyle = `${star.color}${Math.floor(
-          star.brightness * combinedPulse * 0.2 * 255,
-        )
-          .toString(16)
-          .padStart(2, "0")}`;
-        drawShape(ctx, star.x, star.y, star.size * starConfig.glowSize);
-      });
+          ctx.fillStyle = `${star.color}${Math.floor(
+            star.brightness * combinedPulse * 255,
+          )
+            .toString(16)
+            .padStart(2, "0")}`;
+          drawShape(ctx, star.x, star.y, star.size);
+
+          ctx.fillStyle = `${star.color}${Math.floor(
+            star.brightness * combinedPulse * 0.2 * 255,
+          )
+            .toString(16)
+            .padStart(2, "0")}`;
+          drawShape(ctx, star.x, star.y, star.size * starConfig.glowSize);
+        });
+      }
 
       animationFrame = requestAnimationFrame(animate);
     };
