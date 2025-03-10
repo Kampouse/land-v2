@@ -31,8 +31,8 @@ export default component$(() => {
   return (
     <article class="min-h-screen">
       {/* Hero Section with Main Image */}
-      <div class="relative mb-12 h-[60vh] w-full overflow-hidden">
-        <project.image class="h-full w-full rounded-lg border object-cover" />
+      <div class="relative mb-12 h-[60vh]  w-full overflow-hidden rounded-lg border border-xy-cyan/30 object-cover shadow-lg shadow-xy-cyan/10 transition-all duration-300 hover:brightness-110">
+        <project.image class=" h-full w-full rounded-lg border border-xy-cyan/30 object-cover shadow-lg shadow-xy-cyan/10 transition-all duration-300 hover:brightness-110" />
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-xy-black-primary"></div>
         <div class="absolute bottom-0 left-0 right-0 p-8">
           <div class="container mx-auto">

@@ -1,6 +1,7 @@
 import { Link } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
-import Studyhack from "~/assets/study-hack.png?jsx";
+import Studyhack from "~/assets/study-hack.png";
+import JustRND from "~/assets/just-rnd.png?jsx";
 import Coffee from "~/assets/coffee.jpg?jsx";
 import JustChat from "~/assets/just-chat.png?jsx";
 import JustChatConversation from "~/assets/just-chat-convo.png";
@@ -8,8 +9,9 @@ import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png"
 export const projects = [
   {
     id: "just-rnd",
-    title: "Coworking for the odd one",
-    description: "The alternative connections that you were looking for",
+    title: "Just R&D",
+    description:
+      "The alternative to the traditional Meetup platform for like-minded professionals",
     longDescription: `
       Just R&D is a unique coworking space platform designed for individuals who think differently.
       It provides an alternative way to connect and collaborate with like-minded professionals.
@@ -17,27 +19,36 @@ export const projects = [
       The platform focuses on creating an environment where innovation and creative thinking can thrive,
       while maintaining a comfortable space for focused work and collaboration.
     `,
-    image: Studyhack,
+    image: JustRND,
     imageAlt: "display of Just-R&D",
-    technologies: ["Qwik", "TypeScript", "Node.js"],
+    technologies: [
+      "Qwik",
+      "TypeScript",
+      "Node.js",
+      "Turso",
+      "sqlite",
+      "TailwindCss",
+    ],
     featured: true,
-    images: [],
-    demoUrl: "https://just-rd.example.com",
-    githubUrl: "https://github.com/example/just-rd",
+    images: [
+      {
+        src: Studyhack,
+        alt: "landing page for the app",
+      },
+    ],
+    demoUrl: "https://justrnd.com",
+    githubUrl: "https://github.com/Kampouse/just-rnd",
   },
   {
     id: "coffee-shop",
     title: "Coffee Shop Platform",
-    description: "A modern solution for coffee shop management",
+    description: "a Simple Coffee shop store front",
     longDescription: `
-      A comprehensive platform for coffee shop management that helps owners streamline
-      their operations and provide better service to their customers.
-
-      Features include inventory management, order processing, and customer loyalty programs.
+     Simple Coffee shop store frontend without any api integration praticed  responsive web design on mutliplaform while learning the basic of qwikjs
     `,
     image: Coffee,
     imageAlt: "Coffee Shop Platform Interface",
-    technologies: ["Vue", "Python", "Django", "PostgreSQL"],
+    technologies: ["qwikjs", "tailwindcss"],
     featured: true,
     images: [
       {
