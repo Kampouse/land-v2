@@ -2,6 +2,10 @@ import { Link } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
 import Studyhack from "~/assets/study-hack.png?jsx";
 import Coffee from "~/assets/coffee.jpg?jsx";
+import JustChat from "~/assets/just-chat.png?jsx";
+import JustChatBase from "~/assets/just-chat-base.png";
+import JustChatConversation from "~/assets/just-chat-convo.png";
+import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png";
 export const projects = [
   {
     id: "just-rnd",
@@ -20,11 +24,11 @@ export const projects = [
     featured: true,
     images: [
       {
-        src: "/images/just-rd-main.jpg",
+        src: JustChatBase,
         alt: "Just R&D Main Space",
       },
       {
-        src: "/images/just-rd-collab.jpg",
+        src: JustChatConversation,
         alt: "Collaboration Area",
       },
     ],
@@ -59,29 +63,46 @@ export const projects = [
     githubUrl: "https://github.com/example/coffee-platform",
   },
   {
-    id: "project-three",
-    title: "Project Three",
-    description:
-      "A brief description of the third project and its key features",
+    id: "just-chat",
+    title: "Just Chat",
+    description: "Learn foreign language with the help of AI",
     longDescription: `
-      Detailed description of project three and its implementation details.
-      Includes information about the challenges faced and solutions implemented.
+     The project is a chat application that helps users learn foreign languages. It uses AI to simulate friend conversation in two languages. the one you currently speak and the one that you want to learn. You can also analyse the content of sentence to have a better understanding of  the said sentence
     `,
-    image: Studyhack,
-    imageAlt: "Project 3 Screenshot",
-    technologies: ["Next.js", "TailwindCSS", "MongoDB"],
+    image: JustChat,
+    imageAlt: "Just chat logo",
+    technologies: ["qwikjs", "tailwindcss", "railway", "drizzle", "openAI"],
     featured: false,
     images: [
       {
-        src: "/images/project-three-main.jpg",
-        alt: "Project Three Main View",
+        src: JustChatConversationAnalysis,
+        alt: "Just R&D Main Space",
+      },
+      {
+        src: JustChatConversation,
+        alt: "Collaboration Area",
       },
     ],
-    demoUrl: "https://project-three.example.com",
-    githubUrl: "https://github.com/example/project-three",
+    demoUrl: "https://chat.justrnd.com",
+    githubUrl: "https://github.com/kampouse/justchat",
   },
 ];
-
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+  longDescription: string;
+  image: any;
+  imageAlt: string;
+  technologies: string[];
+  featured: boolean;
+  images: {
+    src: string;
+    alt: string;
+  }[];
+  demoUrl: string;
+  githubUrl: string;
+};
 export default component$(() => {
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);

@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, useSignal } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { projects } from "..";
 
@@ -6,6 +6,19 @@ export default component$(() => {
   const location = useLocation();
   const projectName = location.params.name;
   const project = projects.find((p) => p.id === projectName);
+  const selectedImage = useSignal<{ src: string; alt: string } | null>(null);
+  const isModalOpen = useSignal(false);
+
+  const openModal$ = $((image: { src: string; alt: string }) => {
+    selectedImage.value = image;
+    isModalOpen.value = true;
+    document.body.style.overflow = "hidden";
+  });
+
+  const closeModal$ = $(() => {
+    isModalOpen.value = false;
+    document.body.style.overflow = "";
+  });
 
   if (!project) {
     return (
@@ -46,20 +59,23 @@ export default component$(() => {
             </section>
 
             {/* Additional Images Gallery */}
-            {project.images.length > 1 && (
+            {project.images.length > 0 && (
               <section class="mb-12">
                 <h3 class="mb-6 text-2xl font-semibold text-xy-green-accent">
                   Gallery
                 </h3>
                 <div class="grid gap-4 sm:grid-cols-2">
-                  {project.images.slice(1).map((image, index) => (
+                  {project.images.map((image, index: number) => (
                     <div
                       key={index}
                       class="group relative aspect-video cursor-pointer overflow-hidden rounded-lg"
+                      onClick$={() => openModal$(image)}
                     >
                       <img
                         src={image.src}
                         alt={image.alt}
+                        width={500}
+                        height={500}
                         class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
@@ -116,6 +132,47 @@ export default component$(() => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      {isModalOpen.value && selectedImage.value && (
+        <div
+          class="fixed inset-0 z-50 flex items-center justify-center bg-xy-black-primary/80 p-4 backdrop-blur-sm"
+          onClick$={closeModal$}
+        >
+          <div
+            class="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-lg"
+            onClick$={(e) => e.stopPropagation()}
+          >
+            <button
+              class="absolute right-2 top-2 rounded-full bg-xy-black-primary p-2 text-xy-cyan hover:bg-xy-black-secondary"
+              onClick$={closeModal$}
+              aria-label="Close modal"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <img
+              src={selectedImage.value.src}
+              alt={selectedImage.value.alt}
+              width={1000}
+              height={1000}
+              class="max-h-[85vh] max-w-full object-contain"
+            />
+          </div>
+        </div>
+      )}
     </article>
   );
 });
