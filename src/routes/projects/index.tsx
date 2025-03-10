@@ -3,7 +3,6 @@ import { component$ } from "@builder.io/qwik";
 import Studyhack from "~/assets/study-hack.png?jsx";
 import Coffee from "~/assets/coffee.jpg?jsx";
 import JustChat from "~/assets/just-chat.png?jsx";
-import JustChatBase from "~/assets/just-chat-base.png";
 import JustChatConversation from "~/assets/just-chat-convo.png";
 import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png";
 export const projects = [
@@ -22,16 +21,7 @@ export const projects = [
     imageAlt: "display of Just-R&D",
     technologies: ["Qwik", "TypeScript", "Node.js"],
     featured: true,
-    images: [
-      {
-        src: JustChatBase,
-        alt: "Just R&D Main Space",
-      },
-      {
-        src: JustChatConversation,
-        alt: "Collaboration Area",
-      },
-    ],
+    images: [],
     demoUrl: "https://just-rd.example.com",
     githubUrl: "https://github.com/example/just-rd",
   },
