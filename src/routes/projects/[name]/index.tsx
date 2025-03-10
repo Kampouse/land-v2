@@ -1,4 +1,5 @@
 import { $, component$, useSignal } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
 import { useLocation } from "@builder.io/qwik-city";
 import { projects } from "..";
 
@@ -176,3 +177,102 @@ export default component$(() => {
     </article>
   );
 });
+export const head: DocumentHead = ({ params }) => {
+  const project = projects.find((p) => p.id === params.name);
+
+  return {
+    title: project ? `${project.title} | Project Details` : "Project Not Found",
+    meta: [
+      {
+        name: "description",
+        content: project
+          ? project.description
+          : "Project details not available",
+      },
+      {
+        name: "keywords",
+        content: project
+          ? `projects, ${project.title}, ${project.technologies.join(", ")}`
+          : "projects",
+      },
+      {
+        name: "author",
+        content: "Portfolio Creator",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0",
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        name: "theme-color",
+        content: "#0f172a",
+      },
+      {
+        property: "og:image",
+        content: project?.image,
+      },
+      {
+        property: "og:image:width",
+        content: 1200,
+      },
+      {
+        property: "og:image:height",
+        content: 630,
+      },
+      {
+        property: "og:image:alt",
+        content: project
+          ? `Screenshot of ${project.title} project`
+          : "Project image",
+      },
+      {
+        property: "og:title",
+        content: project
+          ? `${project.title} | Project Details`
+          : "Project Not Found",
+      },
+      {
+        property: "og:description",
+        content: project
+          ? project.description
+          : "Project details not available",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: project ? `/projects/${project.id}` : "/projects",
+      },
+      {
+        property: "og:site_name",
+        content: "Portfolio",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: project
+          ? `${project.title} | Project Details`
+          : "Project Not Found",
+      },
+      {
+        name: "twitter:description",
+        content: project
+          ? project.description
+          : "Project details not available",
+      },
+      {
+        name: "twitter:image",
+        content: project?.image,
+      },
+    ],
+  };
+};
