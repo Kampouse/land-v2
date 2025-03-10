@@ -48,7 +48,7 @@ export const projects = [
     `,
     image: Coffee,
     imageAlt: "Coffee Shop Platform Interface",
-    technologies: ["qwikjs", "tailwindcss"],
+    technologies: ["qwikjs", "tailwindcss", "coffee"],
     featured: true,
     images: [
       {
