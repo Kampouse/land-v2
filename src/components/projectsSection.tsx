@@ -21,7 +21,7 @@ export default component$(() => {
               <div class="relative h-48">
                 <project.image
                   alt={project.imageAlt}
-                  class="absolute inset-0 h-full w-full object-cover"
+                  class="absolute inset-0 h-full w-full"
                 />
               </div>
               <div class="p-4">

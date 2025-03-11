@@ -5,6 +5,7 @@ import JustRND from "~/assets/just-rnd.png?jsx";
 import Coffee from "~/assets/coffee.jpg?jsx";
 import JustChat from "~/assets/just-chat.png?jsx";
 import OGJustRND from "~/assets/just-rnd.png";
+
 import OGCoffee from "~/assets/coffee.jpg";
 import OGJustChat from "~/assets/just-chat.png";
 
@@ -56,17 +57,8 @@ export const projects = [
     imageAlt: "Coffee Shop Platform Interface",
     technologies: ["qwikjs", "tailwindcss", "coffee"],
     featured: true,
-    images: [
-      {
-        src: "/images/coffee-main.jpg",
-        alt: "Coffee Shop Dashboard",
-      },
-      {
-        src: "/images/coffee-orders.jpg",
-        alt: "Order Management Interface",
-      },
-    ],
-    demoUrl: "https://coffee-platform.example.com",
+    images: [],
+    demoUrl: "https://coffee-plum-two.vercel.app",
     githubUrl: "https://github.com/example/coffee-platform",
   },
   {

@@ -1,5 +1,5 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
-import ProfileImage from "/public/profile image.jpg?jsx";
+import ProfileImage from "~/assets/profile image.jpg?jsx";
 import * as icon from "lucide-qwik";
 export const ProfilePicture = component$(() => {
   useStyles$(`
