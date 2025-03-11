@@ -4,6 +4,10 @@ import Studyhack from "~/assets/study-hack.png";
 import JustRND from "~/assets/just-rnd.png?jsx";
 import Coffee from "~/assets/coffee.jpg?jsx";
 import JustChat from "~/assets/just-chat.png?jsx";
+import OGJustRND from "~/assets/just-rnd.png";
+import OGCoffee from "~/assets/coffee.jpg";
+import OGJustChat from "~/assets/just-chat.png";
+
 import JustChatConversation from "~/assets/just-chat-convo.png";
 import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png";
 export const projects = [
@@ -20,6 +24,7 @@ export const projects = [
       while maintaining a comfortable space for focused work and collaboration.
     `,
     image: JustRND,
+    ogImage: OGJustRND,
     imageAlt: "display of Just-R&D",
     technologies: [
       "Qwik",
@@ -47,6 +52,7 @@ export const projects = [
      Simple Coffee shop store frontend without any api integration praticed  responsive web design on mutliplaform while learning the basic of qwikjs
     `,
     image: Coffee,
+    ogImage: OGCoffee,
     imageAlt: "Coffee Shop Platform Interface",
     technologies: ["qwikjs", "tailwindcss", "coffee"],
     featured: true,
@@ -71,6 +77,7 @@ export const projects = [
      The project is a chat application that helps users learn foreign languages. It uses AI to simulate friend conversation in two languages. the one you currently speak and the one that you want to learn. You can also analyse the content of sentence to have a better understanding of  the said sentence
     `,
     image: JustChat,
+    ogImage: OGJustChat,
     imageAlt: "Just chat logo",
     technologies: ["qwikjs", "tailwindcss", "railway", "drizzle", "openAI"],
     featured: false,

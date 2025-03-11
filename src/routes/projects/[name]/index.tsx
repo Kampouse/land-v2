@@ -213,15 +213,15 @@ export const head: DocumentHead = ({ params }) => {
       },
       {
         property: "og:image",
-        content: project?.image,
+        content: project?.ogImage,
       },
       {
         property: "og:image:width",
-        content: 1200,
+        content: "1200",
       },
       {
         property: "og:image:height",
-        content: 630,
+        content: "630",
       },
       {
         property: "og:image:alt",
@@ -271,8 +271,8 @@ export const head: DocumentHead = ({ params }) => {
       },
       {
         name: "twitter:image",
-        content: project?.image,
+        content: project?.ogImage,
       },
     ],
-  };
+  } satisfies DocumentHead;
 };
