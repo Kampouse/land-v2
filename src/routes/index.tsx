@@ -4,7 +4,7 @@ import IntroSection from "~/components/introSection";
 import AboutSection from "~/components/aboutSection";
 import ProjectsSection from "~/components/projectsSection";
 import { BlogSection } from "../components/blogSection";
-import OG from "~/assets/og.png";
+import OG from "/og.png";
 
 //------------------------------------------------------------------------------
 // Main Component
@@ -29,7 +29,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Just RND | Collaborative Study Platform",
+  title: "jemartel.dev",
   meta: [
     {
       name: "description",
