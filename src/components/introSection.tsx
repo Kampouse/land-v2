@@ -16,7 +16,7 @@ export const IntroSection = component$(() => {
             </span>
           </h1>
           <p class="max-w-2xl px-2 text-center text-base leading-relaxed text-gray-400  sm:text-lg">
-            building web solutions from the ground up. I'll build what required
+            building web solutions from the ground up. I'll build what is required
             while keeping an eye on emerging technologies.
           </p>
         </div>
