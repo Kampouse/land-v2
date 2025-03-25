@@ -29,16 +29,16 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "jemartel.dev",
+  title: "jean's site ",
   meta: [
     {
       name: "description",
       content:
-        "Find study buddies nearby and collaborate with fellow students at different places in your city. Join study sessions and build connections.",
+        "my personal site ",
     },
     {
       name: "og:title",
-      content: "jemaretl | porfolio",
+      content: "jemartel | porfolio",
     },
     {
       name: "og:description",
