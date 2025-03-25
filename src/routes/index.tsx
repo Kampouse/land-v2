@@ -28,23 +28,22 @@ export default component$(() => {
   );
 });
 
-
 export const head: DocumentHead = {
-  title: "Jean's Portfolio",
+  title: "Just RND | Collaborative Study Platform",
   meta: [
     {
       name: "description",
       content:
-        "Personal Portfolio of Jean-philppe maretl",
+        "Find study buddies nearby and collaborate with fellow students at different places in your city. Join study sessions and build connections.",
     },
     {
       name: "og:title",
-      content: "landing page",
+      content: "jemaretl | porfolio",
     },
     {
       name: "og:description",
       content:
-        "just a landing page",
+        "my personal site",
     },
     {
       name: "og:image",
@@ -68,12 +67,12 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:title",
-      content: "Jean's Portfolio",
+      content: "jemartel site",
     },
     {
       name: "twitter:description",
       content:
-        "Personal portfolio website of Jean-Philippe Martel, showcasing projects, blog posts, and about me section.",
+        "my personal site",
     },
     {
       name: "twitter:image",
