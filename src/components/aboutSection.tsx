@@ -26,7 +26,7 @@ export const AboutSection = component$(() => {
         class="z-10 flex w-full max-w-4xl flex-col items-center rounded-xl border border-xy-black-secondary/10 bg-xy-black-secondary/20 p-4  backdrop-blur-md sm:p-8"
       >
         <h2 class="font-display mb-2  text-xl font-bold leading-tight tracking-wide text-xy-cyan sm:mb-4 sm:text-2xl md:text-4xl">
-          to craft & tinkering
+          to craft & tinker
         </h2>
 
         <div class="mt-2 grid w-full grid-cols-1 gap-2 px-2 sm:mt-4 sm:grid-cols-3">
