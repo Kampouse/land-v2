@@ -28,41 +28,56 @@ export default component$(() => {
   );
 });
 
+
 export const head: DocumentHead = {
-  title: "Jean's Qwik Site",
+  title: "Jean's Portfolio",
   meta: [
     {
       name: "description",
-      content: "Jean's portfolio",
+      content:
+        "Personal Portfolio of Jean-philppe maretl",
     },
     {
-      property: "og:image",
-      content: OG, // Replace with your image URL
+      name: "og:title",
+      content: "landing page",
     },
     {
-      property: "og:image:width",
+      name: "og:description",
+      content:
+        "just a landing page",
+    },
+    {
+      name: "og:image",
+      content: OG,
+    },
+    {
+      name: "og:image:width",
       content: "1200",
     },
     {
-      property: "og:image:height",
+      name: "og:image:height",
       content: "630",
     },
     {
-      name: "twitter:image",
-      content: OG, // Replace with your image URL
+      name: "og:url",
+      content: "https://www.jemartel.dev",
     },
     {
       name: "twitter:card",
       content: "summary_large_image",
     },
     {
-      property: "og:url",
-      content: "https://jemartel.dev", // replace with url
-    },
-    {
-      property: "og:site_name",
+      name: "twitter:title",
       content: "Jean's Portfolio",
     },
-
+    {
+      name: "twitter:description",
+      content:
+        "Personal portfolio website of Jean-Philippe Martel, showcasing projects, blog posts, and about me section.",
+    },
+    {
+      name: "twitter:image",
+      content: OG,
+    },
   ],
 };
