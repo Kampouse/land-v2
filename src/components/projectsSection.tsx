@@ -8,7 +8,7 @@ export default component$(() => {
         data-section="projects"
         class="z-10 flex w-full max-w-4xl flex-col items-center rounded-lg bg-xy-black-secondary/30 p-4 backdrop-blur-sm sm:p-8"
       >
-        <h2 class="mb-2 text-xl font-bold text-xy-cyan sm:mb-4 sm:text-2xl md:text-4xl">
+        <h2 class="mb-8 text-xl font-bold text-xy-cyan sm:text-2xl md:text-4xl">
           Projects
         </h2>
         <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
@@ -16,22 +16,30 @@ export default component$(() => {
             <Link
               href={`/projects/${project.id}`}
               key={project.id}
-              class="border-1 flex cursor-pointer flex-col overflow-hidden rounded-lg border-transparent bg-xy-black-primary/50 transition-all duration-300 hover:border-xy-cyan hover:shadow-lg hover:shadow-xy-cyan/20"
+              class="group relative flex flex-col overflow-hidden rounded-lg border border-xy-green-accent/30 bg-xy-black-primary/30 p-6 shadow-lg shadow-xy-green-accent/20 backdrop-blur-sm transition-all duration-300 hover:border-xy-green-accent/60 hover:bg-xy-black-primary/40 hover:shadow-xl hover:shadow-xy-green-accent/30"
             >
-              <div class="relative h-48">
+              <div class="relative mb-4 pt-[56.25%]">
                 <project.image
                   alt={project.imageAlt}
-                  class="absolute inset-0 h-full w-full"
+                  class="absolute inset-0 h-full w-full rounded-lg object-cover"
                 />
               </div>
-              <div class="p-4">
-                <h3 class="mb-2 font-bold text-xy-green-accent">
-                  {project.title}
-                </h3>
-                <p class="text-sm text-xy-muted">{project.description}</p>
+              <h3 class="mb-2 text-xl font-semibold text-xy-cyan transition-colors duration-300 group-hover:text-xy-green-accent">
+                {project.title}
+              </h3>
+              <p class="flex-grow text-sm text-gray-300">{project.description}</p>
+              <div class="mt-4 flex items-center">
               </div>
             </Link>
           ))}
+        </div>
+        <div class="mt-8 flex justify-center">
+          <Link
+            href="/projects"
+            class="text-lg font-semibold text-xy-cyan transition-colors hover:text-xy-green-accent"
+          >
+            See all projects →
+          </Link>
         </div>
       </div>
     </section>

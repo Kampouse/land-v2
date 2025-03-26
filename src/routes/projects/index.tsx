@@ -56,7 +56,7 @@ export const projects = [
     ogImage: OGCoffee,
     imageAlt: "Coffee Shop Platform Interface",
     technologies: ["qwikjs", "tailwindcss", "coffee"],
-    featured: true,
+    featured: false,
     images: [],
     demoUrl: "https://coffee-plum-two.vercel.app",
     githubUrl: "https://github.com/kampouse/coffee",
@@ -72,7 +72,7 @@ export const projects = [
     ogImage: OGJustChat,
     imageAlt: "Just chat logo",
     technologies: ["qwikjs", "tailwindcss", "railway", "drizzle", "openAI"],
-    featured: false,
+    featured: true,
     images: [
       {
         src: JustChatConversationAnalysis,
@@ -154,7 +154,7 @@ export default component$(() => {
             <Link
               key={project.id}
               href={`/projects/${project.id}`}
-              class="group rounded-xl bg-xy-black-secondary/30 p-4 transition-transform duration-300 hover:-translate-y-2"
+              class="group rounded-xl bg-xy-black-secondary/30 p-4 transition-transform duration-300"
             >
               <div class="relative mb-4 aspect-video overflow-hidden rounded-lg">
                 <project.image class="h-full w-full object-cover transition-transform duration-300" />
