@@ -4,7 +4,7 @@ import IntroSection from "~/components/introSection";
 import AboutSection from "~/components/aboutSection";
 import ProjectsSection from "~/components/projectsSection";
 import { BlogSection } from "../components/blogSection";
-import OG from "../../public/og.png";
+import OG from "~/assets/og.png?url";
 
 //------------------------------------------------------------------------------
 // Main Component

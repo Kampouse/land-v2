@@ -43,7 +43,7 @@ export const projects = [
       },
     ],
     demoUrl: "https://justrnd.com",
-    githubUrl: "https://github.com/Kampouse/just-rnd",
+    githubUrl: "https://github.com/Kampouse/study-hack",
   },
   {
     id: "coffee-shop",
@@ -59,7 +59,7 @@ export const projects = [
     featured: true,
     images: [],
     demoUrl: "https://coffee-plum-two.vercel.app",
-    githubUrl: "https://github.com/example/coffee-platform",
+    githubUrl: "https://github.com/kampouse/coffee",
   },
   {
     id: "just-chat",

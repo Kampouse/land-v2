@@ -41,19 +41,22 @@ export const BlogSection = component$(() => {
             <Link
               href={`/blog/${post.id}`}
               key={post.id}
-              class="group relative flex flex-col overflow-hidden rounded-lg border border-xy-green-accent/30 bg-xy-black-primary/30 p-6 shadow-lg shadow-xy-green-accent/20 backdrop-blur-sm transition-all duration-500  hover:bg-xy-black-primary/40 hover:shadow-xy-green-accent/30"
+              class="group relative flex flex-col overflow-hidden rounded-lg border border-xy-green-accent/30 bg-xy-black-primary/30 p-6 shadow-lg shadow-xy-green-accent/20 backdrop-blur-sm transition-all duration-300  hover:border-xy-green-accent/60 hover:bg-xy-black-primary/40 hover:shadow-xl hover:shadow-xy-green-accent/30"
             >
               <span class="mb-4 inline-block rounded-full bg-xy-green-accent/20 px-3 py-1 text-center text-xs font-medium text-xy-green-accent">
                 {post.tag}
               </span>
-              <h3 class="mb-2 text-xl font-semibold text-xy-cyan group-hover:text-xy-green-accent">
+              <h3 class="mb-2 text-xl font-semibold text-xy-cyan transition-colors duration-300 group-hover:text-xy-green-accent">
                 {post.title}
               </h3>
               <p class="mb-4 text-sm text-xy-muted">{post.date}</p>
-              <p class="text-sm text-gray-300">{post.description}</p>
+              <p class="flex-grow text-sm text-gray-300">{post.description}</p>
               <div class="mt-4 flex items-center">
-                <span class="text-xy-cyan transition-colors hover:text-xy-green-accent">
-                  Read more <span class="ml-1">→</span>
+                <span class="text-xy-cyan transition-colors duration-300 group-hover:text-xy-green-accent">
+                  Read more{" "}
+                  <span class="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </span>
               </div>
             </Link>

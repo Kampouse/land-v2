@@ -8,13 +8,12 @@ interface BlogPost {
   description: string;
   tag: string;
 }
-
 export default component$(() => {
   const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: "Getting Started with Qwik",
-      date: "2023-12-01",
+      date: "2025-01-15",
       description:
         "Learn how to build blazing fast websites with Qwik framework",
       tag: "Framework",
@@ -22,7 +21,7 @@ export default component$(() => {
     {
       id: 2,
       title: "Modern Web Development",
-      date: "2023-11-15",
+      date: "2025-02-20",
       description:
         "Best practices and patterns for building modern web applications",
       tag: "Web Dev",
@@ -30,7 +29,7 @@ export default component$(() => {
     {
       id: 3,
       title: "State Management in Qwik",
-      date: "2023-10-30",
+      date: "2025-03-10",
       description: "Deep dive into state management solutions in Qwik",
       tag: "State",
     },
@@ -48,7 +47,7 @@ export default component$(() => {
             <Link
               key={post.id}
               href={`/blog/${post.id}`}
-              class="group relative flex flex-col overflow-hidden rounded-xl border border-xy-green-accent/30 bg-xy-black-primary/30 p-6 shadow-lg shadow-xy-green-accent/20 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-xy-black-primary/40 hover:shadow-xy-green-accent/30"
+              class="group relative flex flex-col overflow-hidden rounded-xl border border-xy-green-accent/30 bg-xy-black-primary/30 p-6 shadow-lg shadow-xy-green-accent/20 backdrop-blur-sm transition-all duration-500  hover:bg-xy-black-primary/40 hover:shadow-xy-green-accent/30"
             >
               <div class="flex items-center justify-between">
                 <span class="mb-4 inline-block rounded-full bg-xy-green-accent/20 px-3 py-1 text-xs font-medium text-xy-green-accent">
@@ -57,10 +56,9 @@ export default component$(() => {
                 <span class="text-sm text-xy-muted">{post.date}</span>
               </div>
 
-              <h2 class="mb-4 text-2xl font-semibold text-xy-cyan group-hover:text-xy-green-accent">
+              <h2 class="mb-4 text-2xl font-semibold text-xy-cyan transition-colors duration-500 ease-in-out group-hover:text-xy-green-accent">
                 {post.title}
               </h2>
-
               <p class="mb-6 text-gray-300">{post.description}</p>
 
               <div class="mt-auto">
@@ -71,6 +69,15 @@ export default component$(() => {
             </Link>
           ))}
         </div>
+
+
+        <div class="mt-8 flex justify-center">
+          <Link href="/" class="inline-flex items-center text-xy-cyan transition-colors hover:text-xy-green-accent">
+            <span class="mr-2">←</span> Back to Home
+          </Link>
+        </div>
+
+
       </div>
     </div>
   );

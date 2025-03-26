@@ -35,9 +35,10 @@ export default component$(() => {
 
   return (
     <>
-      <div class="fixed inset-0 h-full w-full">
+      <div class="fixed inset-0 h-full w-full -z-10">
         <canvas ref={canvasRef} class="h-full w-full" />
       </div>
+
       <nav class="fixed top-0 z-50 w-full bg-xy-black-primary/80 px-4 py-3 backdrop-blur-sm">
         <div class="mx-auto flex max-w-4xl items-center justify-between">
           <Link
