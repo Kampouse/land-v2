@@ -29,12 +29,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "jean's site ",
+  title: "Jean website 🪄",
   meta: [
     {
       name: "description",
-      content:
-        "my personal site ",
+      content: "my personal site ",
     },
     {
       name: "og:title",
@@ -42,8 +41,7 @@ export const head: DocumentHead = {
     },
     {
       name: "og:description",
-      content:
-        "my personal site",
+      content: "my personal site",
     },
     {
       name: "og:image",
@@ -71,8 +69,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:description",
-      content:
-        "my personal site",
+      content: "my Professional site",
     },
     {
       name: "twitter:image",
