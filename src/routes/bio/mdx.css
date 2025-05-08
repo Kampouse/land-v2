@@ -1,0 +1,239 @@
+.prose {
+  color: #f7f7f8; /* xy-white */
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+/* Headings */
+.prose h1 {
+  color: #08e7c5; /* xy-cyan */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1.5rem;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  color: #7de486; /* xy-green-accent */
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  color: #85b8ff; /* xy-blue-lighter */
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Paragraphs and lists */
+.prose p {
+  margin: 1.2rem 0;
+  color: #aca8ae; /* xy-muted */
+}
+
+.prose ul,
+.prose ol {
+  margin: 1.2rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+  color: #aca8ae; /* xy-muted */
+}
+
+.prose ul > li {
+  list-style-type: disc;
+}
+
+.prose ol > li {
+  list-style-type: decimal;
+}
+
+/* Links */
+.prose a {
+  color: #4cc2fb; /* xy-bold-blue */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: #7de486; /* xy-green-accent */
+  text-decoration: underline;
+}
+
+/* Code blocks */
+.prose pre {
+  background-color: #0a0a0a; /* xy-black-tertiary */
+  border: 1px solid #3b3b3b; /* xy-grey-faded */
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.prose pre::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 0.8rem;
+  color: #6b6b73; /* xy-greyed-out */
+  font-family: "Fira Code", monospace;
+}
+
+.prose pre code {
+  color: #f7f7f8; /* xy-white */
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: block;
+  padding: 0;
+  tab-size: 2;
+}
+
+/* Inline code */
+.prose :not(pre) > code {
+  background-color: #1b1b1b; /* xy-black-secondary */
+  color: #7ce184; /* xy-light-neon-green */
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  font-family: "Fira Code", monospace;
+  white-space: nowrap;
+}
+
+/* Syntax highlighting */
+.prose .token.comment,
+.prose .token.prolog,
+.prose .token.doctype,
+.prose .token.cdata {
+  color: #6b6b73; /* xy-greyed-out */
+  font-style: italic;
+}
+
+.prose .token.namespace {
+  opacity: 0.7;
+}
+
+.prose .token.property,
+.prose .token.tag,
+.prose .token.boolean,
+.prose .token.number,
+.prose .token.constant,
+.prose .token.symbol,
+.prose .token.deleted {
+  color: #ff5858; /* xy-red-pastel */
+}
+
+.prose .token.selector,
+.prose .token.attr-name,
+.prose .token.string,
+.prose .token.char,
+.prose .token.builtin,
+.prose .token.inserted {
+  color: #6a9955; /* xy-green */
+}
+
+.prose .token.operator,
+.prose .token.entity,
+.prose .token.url,
+.prose .language-css .token.string,
+.prose .style .token.string {
+  color: #cd9069; /* xy-orange */
+}
+
+.prose .token.atrule,
+.prose .token.attr-value,
+.prose .token.keyword {
+  color: #c678dd; /* xy-purple */
+}
+
+.prose .token.function,
+.prose .token.class-name {
+  color: #dcdcaa; /* xy-light-yellow */
+}
+
+.prose .token.regex,
+.prose .token.important,
+.prose .token.variable {
+  color: #9cdcfe; /* xy-baby-blue */
+}
+
+.prose .token.important,
+.prose .token.bold {
+  font-weight: bold;
+}
+
+.prose .token.italic {
+  font-style: italic;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 4px solid #7de486; /* xy-green-accent */
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #aca8ae; /* xy-muted */
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.prose th {
+  background-color: #1b1b1b; /* xy-black-secondary */
+  color: #08e7c5; /* xy-cyan */
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.prose td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #3b3b3b; /* xy-grey-faded */
+  color: #aca8ae; /* xy-muted */
+}
+
+/* Images */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+/* Horizontal rule */
+.prose hr {
+  border: 0;
+  height: 1px;
+  background-color: #3b3b3b; /* xy-grey-faded */
+  margin: 2rem 0;
+}
+
+/* Custom scrollbar for code blocks */
+.prose pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prose pre::-webkit-scrollbar-track {
+  background: #1b1b1b; /* xy-black-secondary */
+  border-radius: 4px;
+}
+
+.prose pre::-webkit-scrollbar-thumb {
+  background: #3b3b3b; /* xy-grey-faded */
+  border-radius: 4px;
+}
+
+.prose pre::-webkit-scrollbar-thumb:hover {
+  background: #6b6b73; /* xy-greyed-out */
+}
