@@ -2,6 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import IntroSection from "~/components/introSection";
 import AboutSection from "~/components/aboutSection";
+import ContactSection from "~/components/contactSection";
+
 import ProjectsSection from "~/components/projectsSection";
 import { BlogSection } from "../components/blogSection";
 import OG from "~/assets/og.png?url";
@@ -22,6 +24,7 @@ export default component$(() => {
           <AboutSection />
           <ProjectsSection />
           <BlogSection />
+          <ContactSection />
         </div>
       </div>
     </main>

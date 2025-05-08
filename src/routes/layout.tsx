@@ -35,7 +35,7 @@ export default component$(() => {
 
   return (
     <>
-      <div class="fixed inset-0 h-full w-full -z-10">
+      <div class="fixed inset-0 -z-10 h-full w-full">
         <canvas ref={canvasRef} class="h-full w-full" />
       </div>
 
@@ -45,7 +45,7 @@ export default component$(() => {
             href="/"
             class="flex items-center space-x-2 text-xl font-semibold text-xy-cyan hover:text-xy-green-accent"
           >
-            <span>Jean's Site</span>
+            <span>Jean Space </span>
           </Link>
           <div class="flex items-center space-x-4">
             <Link
