@@ -16,11 +16,11 @@ export default component$(() => {
   return (
     <main>
       <div class="relative  w-full overflow-y-auto overflow-x-hidden">
-        <div class="py-24">
+        <div class="">
           <IntroSection />
         </div>
 
-        <div class="relative flex w-full flex-col items-center gap-12">
+        <div class="relative flex w-full flex-col items-center gap-8">
           <AboutSection />
           <ProjectsSection />
           <BlogSection />

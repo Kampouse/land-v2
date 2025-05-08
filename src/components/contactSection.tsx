@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <section class="flex w-full items-start justify-start px-4 pt-4 md:items-center md:justify-center md:pt-0">
+    <section class="flex w-full items-start justify-start px-4  md:items-center md:justify-center md:pt-0">
       <div
         data-section="contact"
         class="z-10 flex w-full max-w-4xl flex-col items-center rounded-lg border border-xy-black-secondary/10 bg-xy-black-secondary/30 p-4 backdrop-blur-sm sm:p-8"
