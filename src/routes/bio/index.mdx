@@ -1,59 +1,58 @@
 ---
-title: Jean-philippe martel
+title: Jean-philippe Martel
 date: 2023-12-01
-description: Learn how to build blazing fast websites with Qwik framework
-tag: Framework
+description: Full Stack Developer & Open Source Enthusiast
+tag: Personal
 og:
-  title: How I end Here
-  description: try qwik today
+  title: My Journey in Tech
+  description: Crafting digital experiences with passion
 ---
 
-# How i end here
+# About Me
 
-Qwik is a new kind of web framework that can deliver instant loading web applications at any size or complexity. Let's explore how to get started with it.
+I never planned to become a developer. With a background in graphic design, I stumbled into coding while trying to customize my portfolio website. One CSS tweak led to another, and suddenly I was knee-deep in JavaScript documentation at 2 AM, completely hooked.
 
-## Why Qwik?
+## My Journey
 
-Qwik is designed to solve the JavaScript bundle size problem by introducing a new way of thinking about how we load and execute JavaScript in the browser.
+After five years as a designer in Montreal's bustling agency scene, I took the leap to become a full-time developer. The transition wasn't easy—many sleepless nights debugging code and questioning my life choices—but it's been the most rewarding decision I've ever made.
 
-## Installation
+## Current Work
 
 ```bash
-npm create qwik@latest
+# My daily tools
+React | TypeScript | Node.js | Figma | Coffee ☕
 ```
 
-## Basic Concepts
+I currently work as a Frontend Developer at TechStream, where I bridge the gap between design and engineering. My unique background helps me create interfaces that are both beautiful and functional.
 
-### Components
+### Recent Project: Wavelength
 
-Qwik components are defined using the `component$` function:
+My team just launched Wavelength, a music discovery platform that connects independent artists with new listeners:
 
 ```tsx
-import { component$ } from "@builder.io/qwik";
+import { useState, useEffect } from "react";
 
-export default component$(() => {
-  return <div>Hello Qwik!</div>;
-});
+export const ArtistSpotlight = ({ artistId }) => {
+  const [artistData, setArtistData] = useState(null);
+
+  useEffect(() => {
+    // My proudest achievement was optimizing this fetch
+    // to reduce load times by 73%
+    fetchArtistDetails(artistId).then(setArtistData);
+  }, [artistId]);
+
+  return artistData ? <ProfileCard data={artistData} /> : <Skeleton />;
+};
 ```
 
-### State Management
+## Side Projects
 
-Qwik provides powerful state management through signals:
+When I'm not at work, you'll find me:
+- Mentoring junior developers at local meetups
+- Maintaining my open-source UI component library
+- Photographing Montreal's hidden architectural gems
+- Attempting to perfect my sourdough bread recipe
 
-```tsx
-import { component$, useSignal } from "@builder.io/qwik";
+I believe in continuous learning, which is why I'm currently exploring WebGL and 3D animations. My journey's just beginning, and I couldn't be more excited about what's next.
 
-export default component$(() => {
-  const count = useSignal(0);
-
-  return <button onClick$={() => count.value++}>Count: {count.value}</button>;
-});
-```
-
-## Next Steps
-
-- Explore Qwik City for routing
-- Learn about resource loading
-- Understand optimization techniques
-
-Stay tuned for more Qwik tutorials!
+Feel free to reach out if you want to collaborate or just chat about design systems!

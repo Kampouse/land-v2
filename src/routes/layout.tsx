@@ -5,6 +5,7 @@ import {
   useOnDocument,
   $,
 } from "@builder.io/qwik";
+import { useLocation } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { Link } from "@builder.io/qwik-city";
 import { initCanvas } from "~/utils/render";
@@ -22,7 +23,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   const canvasRef = useSignal<HTMLCanvasElement>();
-
+  const loc = useLocation();
   const initCanvasEffect = $(() => {
     const canvas = canvasRef.value;
     if (!canvas) return;
@@ -50,19 +51,31 @@ export default component$(() => {
           <div class="flex items-center space-x-4">
             <Link
               href="/"
-              class="rounded-md px-3 py-2 text-xy-muted hover:bg-xy-white-transparent hover:text-xy-green-accent"
+              class={`rounded-md px-3 py-2 ${
+                loc.url.pathname === "/"
+                  ? "bg-xy-white-transparent font-medium text-xy-green-accent"
+                  : "text-xy-muted hover:bg-xy-white-transparent hover:text-xy-green-accent"
+              }`}
             >
               Home
             </Link>
             <Link
               href="/blog"
-              class="rounded-md px-3 py-2 text-xy-muted hover:bg-xy-white-transparent hover:text-xy-green-accent"
+              class={`rounded-md px-3 py-2 ${
+                loc.url.pathname.startsWith("/blog")
+                  ? "bg-xy-white-transparent font-medium text-xy-green-accent"
+                  : "text-xy-muted hover:bg-xy-white-transparent hover:text-xy-green-accent"
+              }`}
             >
               Blog
             </Link>
             <Link
               href="/bio"
-              class="rounded-md px-3 py-2 text-xy-muted hover:bg-xy-white-transparent hover:text-xy-green-accent"
+              class={`rounded-md px-3 py-2 ${
+                loc.url.pathname.startsWith("/bio")
+                  ? "bg-xy-white-transparent font-medium text-xy-green-accent"
+                  : "text-xy-muted hover:bg-xy-white-transparent hover:text-xy-green-accent"
+              }`}
             >
               Bio
             </Link>
