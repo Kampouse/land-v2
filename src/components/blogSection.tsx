@@ -1,32 +1,32 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-export const BlogSection = component$(() => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Getting Started with Qwik",
-      date: "2023-12-01",
-      description:
-        "Learn how to build blazing fast websites with Qwik framework",
-      tag: "Framework",
-    },
-    {
-      id: 2,
-      title: "Modern Web Development",
-      date: "2023-11-15",
-      description:
-        "Best practices and patterns for building modern web applications",
-      tag: "Web Dev",
-    },
-    {
-      id: 3,
-      title: "State Management in Qwik",
-      date: "2023-10-30",
-      description: "Deep dive into state management solutions in Qwik",
-      tag: "State",
-    },
-  ];
 
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Magic Words",
+    date: "2025-01-01",
+    description: "You shall learn about the magic of Words",
+    tag: "Writting",
+  },
+  {
+    id: 2,
+    title: "Modern Web Development",
+    date: "2023-11-15",
+    description:
+      "Best practices and patterns for building modern web applications",
+    tag: "Web Dev",
+  },
+  {
+    id: 3,
+    title: "State Management in Qwik",
+    date: "2023-10-30",
+    description: "Deep dive into state management solutions in Qwik",
+    tag: "State",
+  },
+];
+
+export const BlogSection = component$(() => {
   return (
     <section class="flex w-full items-start justify-start px-4 pt-4 md:items-center md:justify-center md:pt-0">
       <div

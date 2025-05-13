@@ -3,13 +3,13 @@ import { useLocation } from "@builder.io/qwik-city";
 import { useStyles$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { initCanvas } from "~/utils/render";
-
 // Import all blog posts
 import gettingStarted from "../posts/1.mdx";
 import style from "./mdx.css?inline";
 import modernWeb from "../posts/2.mdx";
 import stateManagement from "../posts/3.mdx";
 
+import { SocialMediaSection } from "~/components/contactSection";
 const posts = {
   "1": gettingStarted,
   "2": modernWeb,
@@ -53,6 +53,7 @@ export default component$(() => {
               ← Back to Blog Archive
             </Link>
           </footer>
+          <SocialMediaSection />
         </div>
       </div>
     </div>

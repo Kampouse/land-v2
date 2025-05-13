@@ -1,7 +1,19 @@
 .prose {
   color: #f7f7f8; /* xy-white */
-  line-height: 1.8;
+  line-height: 1.6; /* Increased to optimal line height for desktop */
   font-size: 1.125rem;
+  max-width: 70ch; /* Optimal line length: 60-80 characters */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .prose {
+    line-height: 1.45; /* Optimized line height for mobile */
+    font-size: 1rem; /* Slightly smaller font for mobile */
+    max-width: 100%; /* Full width on mobile */
+    padding: 0 1rem; /* Add padding on mobile */
+  }
 }
 
 /* Headings */
@@ -10,7 +22,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin: 2rem 0 1.5rem;
-  line-height: 1.2;
+  line-height: 1.2; /* Appropriate for large headings */
 }
 
 .prose h2 {
@@ -26,23 +38,29 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin: 1.5rem 0 1rem;
+  line-height: 1.4; /* Slightly increased for better readability */
 }
 
 /* Paragraphs and lists */
 .prose p {
   margin: 1.2rem 0;
   color: #aca8ae; /* xy-muted */
+  max-width: 70ch; /* Ensure paragraphs maintain optimal line length */
+  line-height: 1.6; /* Match parent container for consistency */
 }
 
 .prose ul,
 .prose ol {
   margin: 1.2rem 0;
   padding-left: 1.5rem;
+  max-width: 65ch; /* Slightly narrower for lists to account for bullets */
+  line-height: 1.6; /* Consistency with paragraphs */
 }
 
 .prose li {
   margin: 0.5rem 0;
   color: #aca8ae; /* xy-muted */
+  line-height: 1.6; /* Match paragraph line height */
 }
 
 .prose ul > li {
@@ -56,7 +74,8 @@
 /* Links */
 .prose a {
   color: #4cc2fb; /* xy-bold-blue */
-  text-decoration: none;
+  text-decoration: underline; /* Improved accessibility with underlines */
+  text-underline-offset: 0.15em; /* Space between text and underline */
   transition: color 0.2s;
 }
 
@@ -74,6 +93,7 @@
   margin: 1.5rem 0;
   overflow-x: auto;
   position: relative;
+  max-width: 100%; /* Allow code blocks to be full width */
 }
 
 .prose pre::before {
@@ -90,7 +110,7 @@
   color: #f7f7f8; /* xy-white */
   font-family: "Fira Code", monospace;
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.7; /* Increased for better code readability */
   display: block;
   padding: 0;
   tab-size: 2;
@@ -105,6 +125,7 @@
   font-size: 0.9em;
   font-family: "Fira Code", monospace;
   white-space: nowrap;
+  line-height: 1.5; /* Added for consistency */
 }
 
 /* Syntax highlighting */
@@ -176,10 +197,13 @@
 /* Blockquotes */
 .prose blockquote {
   border-left: 4px solid #7de486; /* xy-green-accent */
-  padding-left: 1rem;
+  padding: 0.5rem 0 0.5rem 1.5rem; /* Improved padding */
   margin: 1.5rem 0;
   font-style: italic;
   color: #aca8ae; /* xy-muted */
+  background-color: rgba(125, 228, 134, 0.05); /* Subtle background */
+  border-radius: 0 0.25rem 0.25rem 0;
+  line-height: 1.6; /* Match paragraph line height */
 }
 
 /* Tables */
@@ -187,6 +211,9 @@
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
+  overflow-x: auto;
+  display: block; /* Make tables scrollable on small screens */
+  max-width: fit-content;
 }
 
 .prose th {
@@ -195,12 +222,20 @@
   font-weight: 600;
   padding: 0.75rem;
   text-align: left;
+  border-bottom: 2px solid #3b3b3b; /* Stronger border for header */
+  line-height: 1.4; /* Added for consistent spacing */
 }
 
 .prose td {
   padding: 0.75rem;
   border-bottom: 1px solid #3b3b3b; /* xy-grey-faded */
   color: #aca8ae; /* xy-muted */
+  line-height: 1.5; /* Added for consistent spacing */
+}
+
+/* Add zebra striping for better readability */
+.prose tbody tr:nth-child(odd) {
+  background-color: rgba(27, 27, 27, 0.3); /* Very subtle background */
 }
 
 /* Images */
@@ -208,7 +243,22 @@
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
+  margin: 2rem auto; /* Center images */
+  display: block; /* Make images block elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Figure captions */
+.prose figure {
   margin: 2rem 0;
+}
+
+.prose figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b6b73; /* xy-greyed-out */
+  margin-top: 0.5rem;
+  line-height: 1.5; /* Added for consistent spacing */
 }
 
 /* Horizontal rule */
@@ -217,6 +267,12 @@
   height: 1px;
   background-color: #3b3b3b; /* xy-grey-faded */
   margin: 2rem 0;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #3b3b3b,
+    transparent
+  ); /* Fade effect */
 }
 
 /* Custom scrollbar for code blocks */
@@ -236,4 +292,10 @@
 
 .prose pre::-webkit-scrollbar-thumb:hover {
   background: #6b6b73; /* xy-greyed-out */
+}
+
+/* Focus styles for accessibility */
+.prose a:focus {
+  outline: 2px solid #4cc2fb;
+  outline-offset: 2px;
 }

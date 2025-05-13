@@ -1,40 +1,9 @@
 import { Link } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
+import { blogPosts } from "~/components/blogSection";
 import type { DocumentHead } from "@builder.io/qwik-city";
-interface BlogPost {
-  id: number;
-  title: string;
-  date: string;
-  description: string;
-  tag: string;
-}
-export default component$(() => {
-  const blogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: "Getting Started with Qwik",
-      date: "2025-01-15",
-      description:
-        "Learn how to build blazing fast websites with Qwik framework",
-      tag: "Framework",
-    },
-    {
-      id: 2,
-      title: "Modern Web Development",
-      date: "2025-02-20",
-      description:
-        "Best practices and patterns for building modern web applications",
-      tag: "Web Dev",
-    },
-    {
-      id: 3,
-      title: "State Management in Qwik",
-      date: "2025-03-10",
-      description: "Deep dive into state management solutions in Qwik",
-      tag: "State",
-    },
-  ];
 
+export default component$(() => {
   return (
     <div class="min-h-screen  px-4 py-16">
       <div class="mx-auto max-w-4xl">
@@ -70,14 +39,14 @@ export default component$(() => {
           ))}
         </div>
 
-
         <div class="mt-8 flex justify-center">
-          <Link href="/" class="inline-flex items-center text-xy-cyan transition-colors hover:text-xy-green-accent">
+          <Link
+            href="/"
+            class="inline-flex items-center text-xy-cyan transition-colors hover:text-xy-green-accent"
+          >
             <span class="mr-2">←</span> Back to Home
           </Link>
         </div>
-
-
       </div>
     </div>
   );

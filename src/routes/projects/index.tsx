@@ -42,7 +42,7 @@ export const projects = [
         alt: "landing page for the app",
       },
     ],
-    demoUrl: "https://justrnd.com",
+    demoUrl: "https://space.justrnd.com",
     githubUrl: "https://github.com/Kampouse/study-hack",
   },
   {
