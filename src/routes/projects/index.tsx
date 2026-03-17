@@ -11,7 +11,113 @@ import OGJustChat from "~/assets/just-chat.png";
 
 import JustChatConversation from "~/assets/just-chat-convo.png";
 import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png";
+
+// Placeholder images for new projects (reuse existing for now)
+const PlaceholderRust = JustRND;
+const PlaceholderTS = JustChat;
+const PlaceholderPython = Studyhack;
+
 export const projects = [
+  // ============ NEW FEATURED PROJECTS ============
+  {
+    id: "gork-protocol",
+    title: "Gork Protocol",
+    description: "P2P communication system between AI agents using blockchain as trust layer",
+    longDescription: `
+      Decentralized P2P protocol enabling AI agents to communicate securely
+      using NEAR blockchain for identity and trust verification. Features
+      end-to-end encryption, replay protection, and relay-based routing.
+      Built with Rust for maximum performance and reliability.
+    `,
+    image: PlaceholderRust,
+    ogImage: OGJustRND,
+    imageAlt: "Gork Protocol - P2P Agent Communication",
+    technologies: [
+      "Rust",
+      "NEAR Protocol",
+      "P2P",
+      "libp2p",
+      "Cryptography",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://github.com/Kampouse/gork-protocol",
+    githubUrl: "https://github.com/Kampouse/gork-protocol",
+  },
+  {
+    id: "key-manager",
+    title: "Key Manager (TEE)",
+    description: "OutLayer TEE Key Manager - Encrypted KV storage with CKD-based keys",
+    longDescription: `
+      Secure key management system leveraging Trusted Execution Environments (TEE)
+      for encrypted key-value storage. Uses Child Key Derivation (CKD) for
+      hierarchical key generation. Built in Rust for security-critical operations.
+    `,
+    image: PlaceholderRust,
+    ogImage: OGJustRND,
+    imageAlt: "Key Manager - TEE Encrypted Storage",
+    technologies: [
+      "Rust",
+      "TEE",
+      "Cryptography",
+      "Key Derivation",
+      "NEAR",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://github.com/Kampouse/key-manager",
+    githubUrl: "https://github.com/Kampouse/key-manager",
+  },
+  {
+    id: "near-starter-kit",
+    title: "NEAR Starter Kit",
+    description: "Production-ready NEAR dApp starter with React 19 + Tailwind v4",
+    longDescription: `
+      Modern starter kit for building NEAR Protocol dApps. Includes React 19,
+      TypeScript, Tailwind CSS v4, Hot Labs wallet integration, TanStack Query,
+      and Cloudflare Pages deployment. Zero-config, production-ready.
+    `,
+    image: PlaceholderTS,
+    ogImage: OGJustChat,
+    imageAlt: "NEAR Starter Kit",
+    technologies: [
+      "TypeScript",
+      "React 19",
+      "NEAR Protocol",
+      "Tailwind CSS v4",
+      "Cloudflare Pages",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://near-starter-kit.pages.dev/",
+    githubUrl: "https://github.com/Kampouse/near-starter-kit",
+  },
+  {
+    id: "vibe-paper",
+    title: "Vibe Paper",
+    description: "Speculative AI memory systems - exploratory research concepts",
+    longDescription: `
+      Collection of speculative ideas exploring AI memory architectures.
+      Includes Compact Context Model (CCM) - graph-based decision extraction
+      for long-term context in LLMs. Potentially reduce token usage by 80-90%
+      while preserving what actually matters. Research playground.
+    `,
+    image: PlaceholderPython,
+    ogImage: Studyhack,
+    imageAlt: "Vibe Paper - AI Memory Research",
+    technologies: [
+      "Python",
+      "LLM",
+      "Memory Systems",
+      "Research",
+      "Graph Theory",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://github.com/Kampouse/vibe-paper",
+    githubUrl: "https://github.com/Kampouse/vibe-paper",
+  },
+  // ============ LEGACY PROJECTS ============
   {
     id: "just-rnd",
     title: "Just R&D",
@@ -35,7 +141,7 @@ export const projects = [
       "sqlite",
       "TailwindCss",
     ],
-    featured: true,
+    featured: false,
     images: [
       {
         src: Studyhack,
@@ -72,7 +178,7 @@ export const projects = [
     ogImage: OGJustChat,
     imageAlt: "Just chat logo",
     technologies: ["qwikjs", "tailwindcss", "railway", "drizzle", "openAI"],
-    featured: true,
+    featured: false,
     images: [
       {
         src: JustChatConversationAnalysis,
