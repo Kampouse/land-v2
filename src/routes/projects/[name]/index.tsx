@@ -54,8 +54,12 @@ export default component$(() => {
               <h3 class="mb-6 text-2xl font-semibold text-xy-green-accent">
                 Project Overview
               </h3>
-              <div class="prose prose-invert max-w-none text-xy-muted">
-                {project.longDescription}
+              <div class="max-w-none">
+                {project.longDescription.map((para, i) => (
+                  <p key={i} class="mb-4 text-xy-muted">
+                    {para}
+                  </p>
+                ))}
               </div>
             </section>
 
