@@ -14,6 +14,8 @@ import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png"
 import LegionSocial from "~/assets/legion-social.jpg?jsx";
 import OGLegionSocial from "~/assets/legion-social.jpg";
 import ToolKit from "~/assets/tool-kit.jpg?jsx";
+import KeyManager from "~/assets/key-manager.jpg?jsx";
+import OGKeyManager from "~/assets/key-manager.jpg";
 import OGToolKit from "~/assets/tool-kit.jpg";
 import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
@@ -57,8 +59,8 @@ export const projects = [
       "This Key Manager solves that problem using Trusted Execution Environments (TEE). TEEs provide hardware-isolated secure enclaves where code and data are protected from the rest of the system. Keys are generated and used within these secure enclaves, ensuring they never leave protected memory in plaintext.",
       "The system implements encrypted key-value storage with Child Key Derivation (CKD) for hierarchical key generation. This allows applications to derive multiple keys from a single master key while maintaining security boundaries between different data domains. Built entirely in Rust for memory safety and security guarantees.",
     ],
-    image: PlaceholderRust,
-    ogImage: OGJustRND,
+    image: KeyManager,
+    ogImage: OGKeyManager,
     imageAlt: "Key Manager - TEE Encrypted Storage",
     technologies: ["Rust", "TEE", "Cryptography", "Key Derivation", "NEAR"],
     featured: true,
