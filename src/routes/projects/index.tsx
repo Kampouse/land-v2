@@ -229,6 +229,32 @@ export const projects = [
     demoUrl: "https://chat.justrnd.com",
     githubUrl: "https://github.com/kampouse/justchat",
   },
+  {
+    id: "nullclaw",
+    title: "NullClaw",
+    description:
+      "AI assistant infrastructure in Zig - forked to learn about systems programming and experimentation",
+    longDescription: [
+      "Forked NullClaw to learn about systems programming, AI infrastructure design, and experimentation methods. NullClaw is an impossibly small (678 KB binary) and fast AI assistant infrastructure written in Zig that boots in under 2 milliseconds and runs on any hardware with a CPU.",
+      "The project demonstrates remarkable optimizations: near-zero memory usage (~1 MB peak RSS), instant startup time (<2 ms on Apple Silicon, <8 ms on edge hardware), and a single self-contained binary across ARM, x86, and RISC-V architectures. It's fully feature-complete with 22+ AI providers, 18 messaging channels, 19+ tools, hybrid vector+FTS5 memory, multi-layer sandboxing, tunnels, hardware peripherals, MCP, subagents, streaming, and voice.",
+      "Every subsystem is implemented as a vtable interface—providers, channels, tools, memory, tunnels, peripherals, observers, runtimes—making everything pluggable and swappable via configuration without code changes. The architecture includes a custom memory system with SQLite, vector embeddings, cosine similarity search, FTS5 keyword search, and hybrid merging for context management.",
+      "Through forking and experimenting with NullClaw, I gained hands-on experience with Zig programming language, low-level systems optimization, AI agent infrastructure design, security layering (sandboxing, encryption, tunnels), and distributed systems architecture patterns. This exploration taught me how to build production-grade AI infrastructure that runs on minimal hardware with maximum efficiency.",
+    ],
+    image: PlaceholderRust,
+    ogImage: OGJustRND,
+    imageAlt: "NullClaw - AI Assistant Infrastructure in Zig",
+    technologies: [
+      "Zig",
+      "Systems Programming",
+      "AI Infrastructure",
+      "Testing & Experimentation",
+      "Low-Level Optimization",
+    ],
+    featured: false,
+    images: [],
+    demoUrl: "https://github.com/kampouse/nullclaw",
+    githubUrl: "https://github.com/kampouse/nullclaw",
+  },
 ];
 export type Project = {
   id: string;
