@@ -15,6 +15,8 @@ import LegionSocial from "~/assets/legion-social.jpg?jsx";
 import OGLegionSocial from "~/assets/legion-social.jpg";
 import ToolKit from "~/assets/tool-kit.jpg?jsx";
 import OGToolKit from "~/assets/tool-kit.jpg";
+import SevenGen from "~/assets/7gen.jpg?jsx";
+import OGSevenGen from "~/assets/7gen.jpg";
 
 // Placeholder images for new projects (reuse existing for now)
 const PlaceholderRust = JustRND;
@@ -126,8 +128,8 @@ export const projects = [
       "The website includes service pages for each offering, customer testimonials with a carousel interface, and full English/French bilingual support. I prioritized SEO and responsive design to ensure it performs well across all devices.",
       "The result speaks for itself: 90+ Lighthouse scores, sub-second page loads, and a seamless deployment workflow that lets the marketing team self-publish content without developer involvement.",
     ],
-    image: PlaceholderTS,
-    ogImage: OGJustChat,
+    image: SevenGen,
+    ogImage: OGSevenGen,
     imageAlt: "7Gen EV Fleet Management Platform",
     technologies: [
       "Qwik",
