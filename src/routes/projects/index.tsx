@@ -11,6 +11,8 @@ import OGJustChat from "~/assets/just-chat.png";
 
 import JustChatConversation from "~/assets/just-chat-convo.png";
 import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png";
+import LegionSocial from "~/assets/legion-social.jpg?jsx";
+import OGLegionSocial from "~/assets/legion-social.jpg";
 
 // Placeholder images for new projects (reuse existing for now)
 const PlaceholderRust = JustRND;
@@ -179,8 +181,8 @@ export const projects = [
       "The platform features AI chat powered by NEAR AI Cloud's GLM-4.6 model with streaming responses and NEAR-specific context—essentially Grok for the NEAR ecosystem. The builder directory lets users browse NEAR Legion NFT holders, view profiles, and see project showcases. All data syncs from blockchain to D1 database via comprehensive sync scripts for 10-50x faster query times.",
       "Tech stack includes React 19, TanStack Router/Query, Tailwind CSS v4, and shadcn/ui on the frontend. Backend uses Hono.js, Drizzle ORM with D1, Better-Auth, and better-near-auth. Integrated with NEAR AI Cloud, NEAR Social, NEARBlocks API, FastData, and OutLayer payment keys.",
     ],
-    image: PlaceholderTS,
-    ogImage: OGJustChat,
+    image: LegionSocial,
+    ogImage: OGLegionSocial,
     imageAlt: "Legion Social - NEAR Builder Platform",
     technologies: [
       "React 19",
