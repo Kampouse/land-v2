@@ -13,6 +13,8 @@ import JustChatConversation from "~/assets/just-chat-convo.png";
 import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png";
 import LegionSocial from "~/assets/legion-social.jpg?jsx";
 import OGLegionSocial from "~/assets/legion-social.jpg";
+import ToolKit from "~/assets/tool-kit.jpg?jsx";
+import OGToolKit from "~/assets/tool-kit.jpg";
 
 // Placeholder images for new projects (reuse existing for now)
 const PlaceholderRust = JustRND;
@@ -72,8 +74,8 @@ export const projects = [
       "I built this NEAR Starter Kit to solve exactly that problem. It provides a complete, production-ready foundation with React 19, TypeScript, Tailwind CSS v4, Hot Labs wallet integration, TanStack Query, and Cloudflare Pages deployment—all pre-configured and tested together.",
       "Now when I want to build a new application on NEAR, I can start coding features immediately instead of spending hours setting up the toolchain. Everything just works, so I know exactly where to start from every time.",
     ],
-    image: PlaceholderTS,
-    ogImage: OGJustChat,
+    image: ToolKit,
+    ogImage: OGToolKit,
     imageAlt: "NEAR Starter Kit",
     technologies: [
       "TypeScript",
