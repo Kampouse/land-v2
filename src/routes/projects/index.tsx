@@ -14,11 +14,13 @@ import JustChatConversationAnalysis from "~/assets/just-chat-convo-analysis.png"
 import LegionSocial from "~/assets/legion-social.jpg?jsx";
 import OGLegionSocial from "~/assets/legion-social.jpg";
 import ToolKit from "~/assets/tool-kit.jpg?jsx";
+import OGToolKit from "~/assets/tool-kit.jpg";
 import KeyManager from "~/assets/key-manager.jpg?jsx";
 import OGKeyManager from "~/assets/key-manager.jpg";
-import OGToolKit from "~/assets/tool-kit.jpg";
 import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
+import Vibe from "~/assets/vibe.jpg?jsx";
+import OGVibe from "~/assets/vibe.jpg";
 
 // Placeholder images for new projects (reuse existing for now)
 const PlaceholderRust = JustRND;
@@ -162,8 +164,8 @@ export const projects = [
       "These ideas emerged from exploring research on long-term memory for AI systems, context compression techniques, graph-based knowledge representation, and agent learning systems. The philosophy is simple: sometimes you need to throw ideas at a wall and see what sticks. This is that wall.",
       "Reality check: no working code, no benchmarks, no rigorous evaluation. But these are interesting ideas written down as concept papers, potential research directions, and speculative architectures that could inform real implementations down the line.",
     ],
-    image: PlaceholderPython,
-    ogImage: Studyhack,
+    image: Vibe,
+    ogImage: OGVibe,
     imageAlt: "Vibe Paper - AI Memory Research",
     technologies: [
       "Python",
