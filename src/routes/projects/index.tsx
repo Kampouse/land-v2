@@ -2,7 +2,7 @@ import { Link } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
 import Studyhack from "~/assets/study-hack.png";
 import JustRND from "~/assets/just-rnd.png?jsx";
-import JustChat from "~/assets/just-chat.png?jsx";
+
 import OGJustRND from "~/assets/just-rnd.png";
 import LegionSocial from "~/assets/legion-social.jpg?jsx";
 import OGLegionSocial from "~/assets/legion-social.jpg";
@@ -18,11 +18,6 @@ import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
 import Vibe from "~/assets/vibe.jpg?jsx";
 import OGVibe from "~/assets/vibe.jpg";
-
-// Placeholder images for new projects (reuse existing for now)
-const PlaceholderRust = JustRND;
-const PlaceholderTS = JustChat;
-const PlaceholderPython = Studyhack;
 
 export const projects = [
   // ============ NEW FEATURED PROJECTS ============
@@ -63,8 +58,7 @@ export const projects = [
       "Every subsystem is implemented as a vtable interface—providers, channels, tools, memory, tunnels, peripherals, observers, runtimes—making everything pluggable and swappable via configuration without code changes. The architecture includes a custom memory system with SQLite, vector embeddings, cosine similarity search, FTS5 keyword search, and hybrid merging for context management.",
       "Through forking and experimenting with NullClaw, I gained hands-on experience with Zig programming language, low-level systems optimization, AI agent infrastructure design, security layering (sandboxing, encryption, tunnels), and distributed systems architecture patterns. This exploration taught me how to build production-grade AI infrastructure that runs on minimal hardware with maximum efficiency.",
     ],
-    image: PlaceholderRust,
-    ogImage: OGJustRND,
+
     imageAlt: "NullClaw - AI Assistant Infrastructure in Zig",
     technologies: [
       "Zig",
