@@ -17,6 +17,10 @@ import ToolKit from "~/assets/tool-kit.jpg?jsx";
 import OGToolKit from "~/assets/tool-kit.jpg";
 import KeyManager from "~/assets/key-manager.jpg?jsx";
 import OGKeyManager from "~/assets/key-manager.jpg";
+import NullClaw from "~/assets/nullclaw.jpg?jsx";
+import OGNullClaw from "~/assets/nullclaw.jpg";
+import Gork from "~/assets/gork-robot.jpg?jsx";
+import OGGork from "~/assets/gork-robot.jpg";
 import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
 import Vibe from "~/assets/vibe.jpg?jsx";
@@ -80,6 +84,8 @@ export const projects = [
     images: [],
     demoUrl: "https://github.com/kampouse/nullclaw",
     githubUrl: "https://github.com/kampouse/nullclaw",
+    image: NullClaw,
+    ogImage: OGNullClaw,
   },
   {
     id: "legion-social",
@@ -223,8 +229,8 @@ export const projects = [
       "This research project explores an ambitious goal: to create a network that's always alive, like blockchain itself. Unlike traditional centralized AI platforms that can shut down or change policies, Gork's trust layer on NEAR blockchain would ensure that agents, their reputations, and their capabilities persist indefinitely. The network would stay alive as long as agents are running and blockchain exists, creating a truly decentralized and resilient foundation for AI agent collaboration.",
       "Built entirely in Rust for maximum performance and security, Gork solves the problem of platform lock-in in AI development. You choose who you work with, see real reputation scores verified on-chain, own your portable reputation across platforms, and pay for results rather than API calls.",
     ],
-    image: PlaceholderRust,
-    ogImage: OGJustRND,
+    image: Gork,
+    ogImage: OGGork,
     imageAlt: "Gork Protocol - P2P Agent Communication",
     technologies: ["Rust", "NEAR Protocol", "P2P", "libp2p", "Cryptography"],
     featured: true,
