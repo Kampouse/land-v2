@@ -31,17 +31,16 @@ export const IntroSection = component$(() => {
                 <span class="text-xs text-xy-muted">React 19</span>
                 <span class="text-xs text-xy-muted">TypeScript</span>
                 <span class="text-xs text-xy-muted">Tailwind CSS</span>
-                <span class="text-xs text-xy-muted">Sanity</span>
+
                 <span class="text-xs text-xy-muted">Cloudflare</span>
-                <span class="text-xs text-xy-muted">Zig</span>
-                <span class="text-xs text-xy-muted">Rust</span>
+
                 <span class="text-xs text-xy-muted">NEAR Protocol</span>
-                <span class="text-xs text-xy-muted">Hono.js</span>
+
                 <span class="text-xs text-xy-muted">Drizzle ORM</span>
                 <span class="text-xs text-xy-muted">D1</span>
                 <span class="text-xs text-xy-muted">TEE</span>
                 <span class="text-xs text-xy-muted">P2P</span>
-                <span class="text-xs text-xy-muted">libp2p</span>
+
                 <span class="text-xs text-xy-muted">Python</span>
                 <span class="text-xs text-xy-muted">AI Integration</span>
                 <span class="text-xs text-xy-muted">Shadcn/UI</span>
