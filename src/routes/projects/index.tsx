@@ -89,12 +89,12 @@ export const projects = [
   },
   {
     id: "legion-social",
-    title: "Legion Social (Cyborg)",
+    title: "Legion Social",
     description:
       "Social platform for NEAR builders with AI chat, builder directory, and project management",
     longDescription: [
-      "Built Legion Social as a main contributor—a hybrid platform creating the social layer for NEAR ecosystem builders through AI chat, directory services, and meaningful connections. The platform solves the problem of discovering who's actually building in NEAR beyond just the 'yappers' on X.",
-      "Leveraged the FastKV protocol for storing and retrieving key-value data on NEAR blockchain without storage deposits—only transaction fees. This eliminates the barrier created by NEAR Social's deposit requirements and is 10-50x cheaper than traditional contract storage. I also developed near-balancer, a round-robin RPC load balancer that distributes requests across multiple endpoints for improved reliability and reduced rate limiting. I integrated both systems to enable instant project updates and social graph features.",
+      "Built Legion Social as a main contributor during a NEARCON hackathon—a hybrid platform creating the social layer for NEAR ecosystem builders through AI chat, directory services, and meaningful connections. The platform solves the problem of discovering who's actually building in NEAR beyond just the 'yappers' on X.",
+      "Leveraged the FastKV protocol for storing and retrieving key-value data on NEAR blockchain without storage deposits—only transaction fees. This eliminates the barrier created by NEAR Social's deposit requirements and is 10-50x cheaper than traditional contract storage. I also developed near-balancer, a round-robin RPC load balancer that distributes requests across multiple endpoints for improved reliability and reduced rate limiting. I integrated both systems to enable instant project updates and social graph features. The ultimate goal is to integrate Legion Social into the core NEAR Legion platform to provide seamless social functionality for the entire ecosystem.",
       "The platform features AI chat powered by NEAR AI Cloud's GLM-4.6 model with streaming responses and NEAR-specific context—essentially Grok for the NEAR ecosystem. The builder directory lets users browse NEAR Legion NFT holders, view profiles, and see project showcases. All data syncs from blockchain to D1 database via comprehensive sync scripts for 10-50x faster query times.",
       "Tech stack includes React 19, TanStack Router/Query, Tailwind CSS v4, and shadcn/ui on the frontend. Backend uses Hono.js, Drizzle ORM with D1, Better-Auth, and better-near-auth. Integrated with NEAR AI Cloud, NEAR Social, NEARBlocks API, FastData, and OutLayer payment keys.",
     ],
