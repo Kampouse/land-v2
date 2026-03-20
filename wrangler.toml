@@ -1,5 +1,5 @@
 name = "land-v3"
-compatibility_date = "2024-01-01"
+compatibility_date = "latest"
 pages_build_output_dir = "./dist"
 
 # Enable Node.js compatibility for Cloudflare Pages
