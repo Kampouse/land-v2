@@ -6,3 +6,4 @@ pages_build_output_dir = "./dist"
 # This ensures Node.js APIs are available in the Pages Functions environment
 compatibility_flags = ["nodejs_compat"]
 node_compat = true
+node_version = ">=18.17.0"
