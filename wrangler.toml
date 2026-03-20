@@ -5,3 +5,4 @@ pages_build_output_dir = "./dist"
 # Enable Node.js compatibility for Cloudflare Pages
 # This ensures Node.js APIs are available in the Pages Functions environment
 compatibility_flags = ["nodejs_compat"]
+node_compat = true
