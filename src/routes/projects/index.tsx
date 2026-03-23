@@ -22,6 +22,32 @@ import OGVibe from "~/assets/vibe.jpg";
 export const projects = [
   // ============ NEW FEATURED PROJECTS ============
   {
+    id: "mpp-near",
+    title: "MPP-NEAR",
+    description:
+      "Micropayment Protocol for AI agents - 402 auto-payment with NEAR Intents and cross-chain support",
+    longDescription: [
+      "MPP-NEAR implements the Micropayment Protocol (MPP-1.0) specification for autonomous AI agents. It enables seamless payment for paid APIs with automatic 402 challenge handling, budget controls, session caching, and cross-chain support via OutLayer.",
+      "The core feature is gasless payments through NEAR Intents—agents can pay for services without holding NEAR for gas fees. The protocol handles the entire payment flow: detect 402 response, parse challenge, create payment via Intents, and retry the original request with credentials.",
+      "Built entirely in Rust, the SDK provides both CLI tools and a programmatic client for integration. Features include per-request and daily budget limits, automatic receipt caching to avoid duplicate payments, and cross-chain withdrawals to Ethereum, Bitcoin, and Solana.",
+      "This solves a real problem for AI agents: how to autonomously pay for API services without human intervention. Instead of managing API keys and subscriptions across dozens of services, agents can now pay per-request with built-in budget controls.",
+    ],
+    image: Gork,
+    ogImage: OGGork,
+    imageAlt: "MPP-NEAR - Micropayment Protocol",
+    technologies: [
+      "Rust",
+      "NEAR Protocol",
+      "HTTP/402",
+      "Cross-chain",
+      "AI Agents",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://github.com/Kampouse/mpp-near",
+    githubUrl: "https://github.com/Kampouse/mpp-near",
+  },
+  {
     id: "7gen",
     title: "7Gen Marketing Website",
     description:
