@@ -23,6 +23,8 @@ import OGOutLayerWallet from "~/assets/outlayer-wallet.jpg";
 import OutLayerWalletGallery from "~/assets/outlayer-wallet-2.jpg";
 import Fintrack from "~/assets/fintrack.jpg?jsx";
 import OGFintrack from "~/assets/fintrack.jpg";
+import NostrDocs from "~/assets/nostr-docs.jpg?jsx";
+import OGNostrDocs from "~/assets/nostr-docs.jpg";
 
 export const projects = [
   // ============ NEW FEATURED PROJECTS ============
@@ -233,6 +235,31 @@ export const projects = [
     images: [],
     demoUrl: "https://fin.jemartel.dev",
     githubUrl: "https://github.com/Kampouse/fintrack-ts",
+  },
+  {
+    id: "nostr-docs",
+    title: "Nostr Docs",
+    description:
+      "Comprehensive documentation site for the Nostr protocol — guides, NIPs, and developer resources",
+    longDescription: [
+      "Nostr Docs is a comprehensive documentation site built to help developers understand and build on the Nostr decentralized social protocol. It covers everything from the fundamentals of how Nostr works to detailed developer guides for implementing NIPs (Nostr Implementation Possibilities).",
+      "The site is built with Astro Starlight, providing a fast, accessible, and search-optimized documentation experience with full-text search, dark mode, and a responsive sidebar navigation. Content is written in MDX, allowing interactive components alongside standard documentation.",
+      "Topics covered include keys and identity, how relays work, publishing your first note, NIP references, and practical development guides. The documentation aims to be the go-to resource for anyone building on Nostr, from beginners understanding the protocol to advanced developers implementing custom NIPs.",
+    ],
+    image: NostrDocs,
+    ogImage: OGNostrDocs,
+    imageAlt: "Nostr Docs - Decentralized Social Protocol Documentation",
+    technologies: [
+      "Astro",
+      "Starlight",
+      "MDX",
+      "Cloudflare Pages",
+      "TypeScript",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://nostr.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/nostr-docs",
   },
   // ============ LEGACY PROJECTS ============
   {
