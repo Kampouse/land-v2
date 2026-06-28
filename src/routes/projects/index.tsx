@@ -211,7 +211,6 @@ export const projects = [
       "Fintrack is a personal portfolio tracker that aggregates stocks and crypto positions into a single terminal-style dashboard. It pulls real-time market data from Finnhub for equities and Binance for cryptocurrencies, displaying live prices, P&L, and asset allocation.",
       "The web app uses a dark terminal aesthetic with lime green accents, designed mobile-first with a max-width layout that feels native on phones. It features a watchlist screener, interactive candlestick charts with order book depth, and a tape feed for real-time trades.",
       "All API calls route through Cloudflare Workers proxy endpoints to handle CORS and keep API keys server-side. The Binance integration uses both REST polling and WebSocket streams for live ticker updates, while Finnhub provides real-time stock quotes.",
-      "A React Native version was also built with Expo, sharing the same API layer and design language. The web version is deployed on Cloudflare Pages at fin.jemartel.dev with edge-cached static assets and serverless API functions.",
     ],
     image: Fintrack,
     ogImage: OGFintrack,
