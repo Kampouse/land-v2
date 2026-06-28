@@ -25,6 +25,8 @@ import Fintrack from "~/assets/fintrack.jpg?jsx";
 import OGFintrack from "~/assets/fintrack.jpg";
 import NostrDocs from "~/assets/nostr-docs.jpg?jsx";
 import OGNostrDocs from "~/assets/nostr-docs.jpg";
+import NostrLink from "~/assets/nostrlink.jpg?jsx";
+import OGNostrLink from "~/assets/nostrlink.jpg";
 
 export const projects = [
   // ============ NEW FEATURED PROJECTS ============
@@ -260,6 +262,31 @@ export const projects = [
     images: [],
     demoUrl: "https://nostr.jemartel.dev",
     githubUrl: "https://github.com/Kampouse/nostr-docs",
+  },
+  {
+    id: "nostrlink",
+    title: "NostrLink",
+    description:
+      "Professional network built on Nostr — profiles, job postings, and verifiable credentials",
+    longDescription: [
+      "NostrLink is a professional networking platform built on the Nostr protocol, offering a decentralized alternative to LinkedIn. Users create profiles, publish professional content, post job listings, and build verifiable professional identities using Nostr's cryptographic foundations.",
+      "The platform leverages Nostr's decentralized architecture to give users full ownership of their professional identity. No central authority controls profiles or connections — everything is cryptographically signed and portable across relays. Professional credentials and work history can be verified through Nostr's event-based system.",
+      "Built with React and Vite, the frontend uses a clean dark-themed interface with emerald green accents. The app integrates with Nostr relays for real-time feed updates, NIP-05 verification for identity, and wallet extensions for signing — no private keys are ever exposed to the application.",
+    ],
+    image: NostrLink,
+    ogImage: OGNostrLink,
+    imageAlt: "NostrLink - Decentralized Professional Network",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Nostr",
+      "Cloudflare Pages",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://in.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/nostr-linkedin",
   },
   // ============ LEGACY PROJECTS ============
   {
