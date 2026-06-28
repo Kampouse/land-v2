@@ -185,7 +185,6 @@ export const projects = [
       "OutLayer Wallet is a multi-wallet custody manager built for the NEAR Protocol. It provides a unified interface for managing multiple NEAR accounts with full support for balances, sends, swaps, spending policies, and multi approval workflows.",
       "The wallet abstracts away the complexity of NEAR account management by exposing a clean custody layer where users can create sub-accounts, set spending policies, and route transactions through approval chains. This makes it suitable for both personal treasury management and team-based multi-signer setups.",
       "Built with React and Vite, the frontend uses a dark terminal-inspired aesthetic with lime green accents. The backend runs on Cloudflare Workers with encrypted KV storage powered by a TEE-based key manager for secure key derivation. All sensitive operations go through the Key Manager's CKD-based hierarchical key generation.",
-      "The wallet integrates with NEAR's native infrastructure including FastKV for gas-efficient on-chain storage, NEAR Social for social graph features, and OutLayer payment keys for streaming payments. It connects via wallet extensions (NIP-07 style) — no private keys are ever pasted or stored in plaintext.",
     ],
     image: OutLayerWallet,
     ogImage: OGOutLayerWallet,
