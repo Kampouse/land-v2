@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "name": "jemartel-portfolio",
+  "description": "Jean Martel's portfolio — AI-native full-stack engineer. Query projects, skills, and contact info.",
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://www.jemartel.dev/mcp"
+  },
+  "tools": [
+    "get_about",
+    "get_projects",
+    "get_project",
+    "get_skills",
+    "search_projects"
+  ]
+}
