@@ -12,8 +12,6 @@ import KeyManager from "~/assets/key-manager.jpg?jsx";
 import OGKeyManager from "~/assets/key-manager.jpg";
 import NullClaw from "~/assets/nullclaw.jpg?jsx";
 import OGNullClaw from "~/assets/nullclaw.jpg";
-import Gork from "~/assets/gork-robot.jpg?jsx";
-import OGGork from "~/assets/gork-robot.jpg";
 import NearBalancer from "~/assets/near-balancer.jpg?jsx";
 import OGNearBalancer from "~/assets/near-balancer.jpg";
 import SevenGen from "~/assets/7gen.jpg?jsx";
