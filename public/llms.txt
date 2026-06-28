@@ -1,0 +1,65 @@
+# Jean Martel
+
+> AI-native builder. I ship production systems, not demos.
+
+Full-stack engineer based in Montreal specializing in blockchain, AI infrastructure, and developer tooling. I build production-grade applications across web, mobile, and decentralized systems.
+
+## Projects
+
+### 7Gen Marketing Website
+Marketing website for EV fleet solutions company. Built with Qwik, Tailwind, Sanity CMS, and Cloudflare Pages. 90+ Lighthouse scores, bilingual EN/FR, sub-second loads.
+- Demo: https://7gen.com/solutions/
+
+### OutLayer Wallet
+Multi-wallet custody manager for NEAR Protocol. Manage multiple wallets from a single dashboard — balances, sends, swaps, spending policies, and multi-approval workflows. React + Vite frontend, Cloudflare Workers backend with TEE-based key manager.
+- Demo: https://wallet.jemartel.dev
+- Source: https://github.com/Kampouse/outlayer-wallet
+
+### Fintrack
+Personal portfolio tracker for stocks and crypto with real-time market data. Terminal-style dashboard with live prices, P&L, candlestick charts, and order book depth. Data from Finnhub (equities) and Binance (crypto) via Cloudflare Workers proxies.
+- Demo: https://fin.jemartel.dev
+- Source: https://github.com/Kampouse/fintrack-ts
+
+### Legion Social
+Social platform for NEAR ecosystem builders with AI chat, builder directory, and project management. Built during NEARCON hackathon using FastKV protocol, near-balancer RPC load balancer, and NEAR AI Cloud.
+- Demo: https://near-agent.pages.dev/
+- Source: https://github.com/NEARBuilders/cyborg
+
+### NullClaw
+AI assistant infrastructure written in Zig. Compact 678 KB binary, boots in under 2ms, supports 22+ AI providers and 18 messaging channels. Pluggable vtable architecture with hybrid vector+FTS5 memory.
+- Source: https://github.com/kampouse/nullclaw
+
+### Nostr Docs
+Comprehensive documentation site for the Nostr decentralized social protocol. Built with Astro Starlight, covering keys, relays, NIPs, and developer guides.
+- Demo: https://nostr.jemartel.dev
+- Source: https://github.com/Kampouse/nostr-docs
+
+### NostrLink
+Professional networking platform built on Nostr. Decentralized alternative to LinkedIn with cryptographically signed profiles, job postings, and verifiable credentials.
+- Demo: https://in.jemartel.dev
+- Source: https://github.com/Kampouse/nostr-linkedin
+
+### NEAR Balancer
+Zero-dependency NEAR RPC client with round-robin load balancing across 5 public endpoints. Automatic retry with exponential backoff, rate limit handling, and cross-platform support (Node.js, Bun, Deno, browsers).
+- NPM: https://www.npmjs.com/package/near-balancer
+- Source: https://github.com/Kampouse/near-balancer
+
+### Vibe
+Research project on compact, retrieval-augmented multi-agent memory systems using vector embeddings and knowledge graphs for AI agents.
+- Source: https://github.com/Kampouse/vibe-paper
+
+## Skills
+
+- **Languages:** TypeScript, Rust, Zig, Python
+- **Frontend:** React, Qwik, Vite, Tailwind CSS, Expo/React Native
+- **Backend:** Cloudflare Workers, Hono.js, Node.js
+- **Blockchain:** NEAR Protocol, Nostr, Solidity
+- **Infrastructure:** Cloudflare Pages, KV storage, D1, TEE
+- **AI/ML:** Vector embeddings, RAG, agent systems, LLM integration
+
+## Links
+
+- Website: https://www.jemartel.dev
+- GitHub: https://github.com/Kampouse
+- Email: jp@jemartel.dev
+- Location: Montreal, Canada
