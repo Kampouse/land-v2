@@ -18,6 +18,10 @@ import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
 import Vibe from "~/assets/vibe.jpg?jsx";
 import OGVibe from "~/assets/vibe.jpg";
+import OutLayerWallet from "~/assets/outlayer-wallet.png?jsx";
+import OGOutLayerWallet from "~/assets/outlayer-wallet.png";
+import Fintrack from "~/assets/fintrack.png?jsx";
+import OGFintrack from "~/assets/fintrack.png";
 
 export const projects = [
   // ============ NEW FEATURED PROJECTS ============
@@ -171,6 +175,60 @@ export const projects = [
     images: [],
     demoUrl: "https://github.com/Kampouse/vibe-paper",
     githubUrl: "https://github.com/Kampouse/vibe-paper",
+  },
+  {
+    id: "outlayer-wallet",
+    title: "OutLayer Wallet",
+    description:
+      "Multi-wallet custody manager for NEAR Protocol — balances, sends, swaps, policies, and approvals",
+    longDescription: [
+      "OutLayer Wallet is a multi-wallet custody manager built for the NEAR Protocol. It provides a unified interface for managing multiple NEAR accounts with full support for balances, sends, swaps, spending policies, and multi approval workflows.",
+      "The wallet abstracts away the complexity of NEAR account management by exposing a clean custody layer where users can create sub-accounts, set spending policies, and route transactions through approval chains. This makes it suitable for both personal treasury management and team-based multi-signer setups.",
+      "Built with React and Vite, the frontend uses a dark terminal-inspired aesthetic with lime green accents. The backend runs on Cloudflare Workers with encrypted KV storage powered by a TEE-based key manager for secure key derivation. All sensitive operations go through the Key Manager's CKD-based hierarchical key generation.",
+      "The wallet integrates with NEAR's native infrastructure including FastKV for gas-efficient on-chain storage, NEAR Social for social graph features, and OutLayer payment keys for streaming payments. It connects via wallet extensions (NIP-07 style) — no private keys are ever pasted or stored in plaintext.",
+    ],
+    image: OutLayerWallet,
+    ogImage: OGOutLayerWallet,
+    imageAlt: "OutLayer Wallet - NEAR Multi-Wallet Custody Manager",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "NEAR Protocol",
+      "Cloudflare Workers",
+      "TEE",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://wallet.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/outlayer-wallet",
+  },
+  {
+    id: "fintrack",
+    title: "Fintrack",
+    description:
+      "Personal portfolio tracker for stocks and crypto with real-time market data and terminal aesthetic",
+    longDescription: [
+      "Fintrack is a personal portfolio tracker that aggregates stocks and crypto positions into a single terminal-style dashboard. It pulls real-time market data from Finnhub for equities and Binance for cryptocurrencies, displaying live prices, P&L, and asset allocation.",
+      "The web app uses a dark terminal aesthetic with lime green accents, designed mobile-first with a max-width layout that feels native on phones. It features a watchlist screener, interactive candlestick charts with order book depth, and a tape feed for real-time trades.",
+      "All API calls route through Cloudflare Workers proxy endpoints to handle CORS and keep API keys server-side. The Binance integration uses both REST polling and WebSocket streams for live ticker updates, while Finnhub provides real-time stock quotes.",
+      "A React Native version was also built with Expo, sharing the same API layer and design language. The web version is deployed on Cloudflare Pages at fin.jemartel.dev with edge-cached static assets and serverless API functions.",
+    ],
+    image: Fintrack,
+    ogImage: OGFintrack,
+    imageAlt: "Fintrack - Personal Portfolio Tracker",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Cloudflare Pages",
+      "Finnhub",
+      "Binance API",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://fin.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/fintrack-ts",
   },
   // ============ LEGACY PROJECTS ============
   {
