@@ -251,7 +251,7 @@ export const head: DocumentHead = ({ params }) => {
       },
       {
         property: "og:url",
-        content: project ? `/projects/${project.id}` : "/projects",
+        content: project ? `https://jemartel.dev/projects/${project.id}` : "https://jemartel.dev/projects",
       },
       {
         property: "og:site_name",

@@ -1,4 +1,5 @@
 import { type RequestHandler } from "@builder.io/qwik-city";
+import { projectsData } from "~/data/projects";
 
 const PORTFOLIO = {
   about: {
@@ -7,7 +8,7 @@ const PORTFOLIO = {
     headline: "AI-native builder. I ship production systems, not demos.",
     location: "Montreal, Canada",
     email: "jp@jemartel.dev",
-    website: "https://www.jemartel.dev",
+    website: "https://jemartel.dev",
     github: "https://github.com/Kampouse",
     bio: "Full-stack engineer specializing in blockchain (NEAR Protocol), AI infrastructure, and developer tooling. I build production-grade applications across web, mobile, and decentralized systems using AI-native workflows.",
   },
@@ -19,23 +20,13 @@ const PORTFOLIO = {
     infrastructure: ["Cloudflare Pages", "KV Storage", "D1", "TEE"],
     ai: ["Vector Embeddings", "RAG", "Agent Systems", "LLM Integration"],
   },
-  projects: [
-    { id: "7gen", title: "7Gen Marketing Website", description: "Marketing website for EV fleet solutions company, built with Qwik, Tailwind, Sanity, and Cloudflare.", technologies: ["Qwik", "Tailwind CSS", "Sanity", "Cloudflare", "TypeScript"], demoUrl: "https://7gen.com/solutions/", featured: true },
-    { id: "outlayer-wallet", title: "OutLayer Wallet", description: "Multi-wallet custody manager for NEAR Protocol — balances, sends, swaps, policies, and approvals.", technologies: ["React", "TypeScript", "Vite", "NEAR Protocol", "Cloudflare Workers", "TEE"], demoUrl: "https://wallet.jemartel.dev", githubUrl: "https://github.com/Kampouse/outlayer-wallet", featured: true },
-    { id: "fintrack", title: "Fintrack", description: "Personal portfolio tracker for stocks and crypto with real-time market data and terminal aesthetic.", technologies: ["React", "TypeScript", "Vite", "Cloudflare Pages", "Finnhub", "Binance API"], demoUrl: "https://fin.jemartel.dev", githubUrl: "https://github.com/Kampouse/fintrack-ts", featured: true },
-    { id: "legion-social", title: "Legion Social", description: "Social platform for NEAR builders with AI chat, builder directory, and project management.", technologies: ["React 19", "TypeScript", "Hono.js", "Drizzle ORM", "NEAR Protocol", "Tailwind CSS v4", "AI Integration"], demoUrl: "https://near-agent.pages.dev/", githubUrl: "https://github.com/NEARBuilders/cyborg", featured: false },
-    { id: "nullclaw", title: "NullClaw", description: "AI assistant infrastructure in Zig — 678 KB binary, boots in under 2ms, 22+ AI providers, 18 messaging channels.", technologies: ["Zig", "Systems Programming", "AI Infrastructure"], demoUrl: "https://github.com/kampouse/nullclaw", githubUrl: "https://github.com/kampouse/nullclaw", featured: false },
-    { id: "nostr-docs", title: "Nostr Docs", description: "Comprehensive documentation site for the Nostr protocol — guides, NIPs, and developer resources.", technologies: ["Astro", "Starlight", "MDX", "Cloudflare Pages", "TypeScript"], demoUrl: "https://nostr.jemartel.dev", githubUrl: "https://github.com/Kampouse/nostr-docs", featured: true },
-    { id: "nostrlink", title: "NostrLink", description: "Professional network built on Nostr — profiles, job postings, and verifiable credentials.", technologies: ["React", "TypeScript", "Vite", "Nostr", "Cloudflare Pages"], demoUrl: "https://in.jemartel.dev", githubUrl: "https://github.com/Kampouse/nostr-linkedin", featured: true },
-    { id: "near-balancer", title: "NEAR Balancer", description: "Zero-dependency NEAR RPC client with round-robin load balancing across 5 public endpoints, automatic retry, and rate limit handling.", technologies: ["TypeScript", "NEAR Protocol", "RPC", "Load Balancing"], demoUrl: "https://www.npmjs.com/package/near-balancer", githubUrl: "https://github.com/Kampouse/near-balancer", featured: true },
-    { id: "vibe-paper", title: "Vibe", description: "Research project on compact, retrieval-augmented multi-agent memory systems using vector embeddings and knowledge graphs.", technologies: ["Rust", "Vector Embeddings", "Knowledge Graphs", "Memory Systems", "Research"], demoUrl: "https://github.com/Kampouse/vibe-paper", githubUrl: "https://github.com/Kampouse/vibe-paper", featured: false },
-  ],
+  projects: projectsData,
 };
 
 const TOOLS = [
   { name: "get_about", description: "Get Jean Martel's bio, contact info, and current headline.", inputSchema: { type: "object", properties: {} } },
   { name: "get_projects", description: "List all projects. Optionally filter to featured only.", inputSchema: { type: "object", properties: { featured: { type: "boolean", description: "If true, only return featured projects." } } } },
-  { name: "get_project", description: "Get details about a specific project by id.", inputSchema: { type: "object", properties: { id: { type: "string", description: "Project id: 7gen, outlayer-wallet, fintrack, legion-social, nullclaw, nostr-docs, nostrlink, near-balancer, vibe-paper" } }, required: ["id"] } },
+  { name: "get_project", description: "Get details about a specific project by id.", inputSchema: { type: "object", properties: { id: { type: "string", description: `Project id: ${projectsData.map((p) => p.id).join(", ")}` } }, required: ["id"] } },
   { name: "get_skills", description: "Get Jean's technical skills by category.", inputSchema: { type: "object", properties: {} } },
   { name: "search_projects", description: "Search projects by technology or keyword.", inputSchema: { type: "object", properties: { query: { type: "string", description: "Technology or keyword (e.g. 'NEAR', 'React', 'Zig')" } }, required: ["query"] } },
 ];
@@ -49,8 +40,8 @@ function handleToolCall(name: string, args: Record<string, unknown>): string {
       return JSON.stringify(featured ? PORTFOLIO.projects.filter((p) => p.featured) : PORTFOLIO.projects, null, 2);
     }
     case "get_project": {
-      const id = args.id as string;
-      const project = PORTFOLIO.projects.find((p) => p.id === id || p.title.toLowerCase().includes(id.toLowerCase()));
+      const id = (args.id as string).toLowerCase();
+      const project = PORTFOLIO.projects.find((p) => p.id === id || p.title.toLowerCase().includes(id));
       return JSON.stringify(project || { error: `Not found: ${id}`, available: PORTFOLIO.projects.map((p) => p.id) });
     }
     case "get_skills":

@@ -1,0 +1,266 @@
+/**
+ * Single source of truth for project data.
+ * Both src/routes/projects/index.tsx and src/routes/mcp/index.ts
+ * import from this file so they never drift.
+ */
+export interface ProjectData {
+  id: string;
+  title: string;
+  description: string;
+  longDescription: string[];
+  technologies: string[];
+  featured: boolean;
+  demoUrl: string;
+  githubUrl: string;
+}
+
+export const projectsData: ProjectData[] = [
+  {
+    id: "7gen",
+    title: "7Gen Marketing Website",
+    description:
+      "Marketing website for EV fleet solutions company, built with Qwik, Tailwind, Sanity, and Cloudflare",
+    longDescription: [
+      "In just 4 weeks, I delivered a production-ready marketing website for 7Gen, a company helping businesses transition to electric vehicles. The site showcases their core services: vehicle financing, charging infrastructure, fleet management, and carbon credit tracking.",
+      "I chose Qwik because I've built many applications with it before and knew it offers the best developer experience and performance. Combined with Tailwind CSS for rapid styling, I set up Sanity as a headless CMS for content flexibility, enabling the marketing team to update content independently. Everything deploys automatically via Cloudflare Pages with global edge caching.",
+      "The website includes service pages for each offering, customer testimonials with a carousel interface, and full English/French bilingual support. I prioritized SEO and responsive design to ensure it performs well across all devices.",
+      "The result speaks for itself: 90+ Lighthouse scores, sub-second page loads, and a seamless deployment workflow that lets the marketing team self-publish content without developer involvement.",
+    ],
+    technologies: [
+      "Qwik",
+      "Tailwind CSS",
+      "Sanity",
+      "Cloudflare",
+      "TypeScript",
+    ],
+    featured: true,
+    demoUrl: "https://7gen.com/solutions/",
+    githubUrl: "",
+  },
+  {
+    id: "outlayer-wallet",
+    title: "OutLayer Wallet",
+    description:
+      "Multi-wallet custody manager for NEAR Protocol — balances, sends, swaps, policies, and approvals",
+    longDescription: [
+      "OutLayer Wallet is a multi-wallet custody manager built for the NEAR Protocol. It provides a unified interface for managing multiple NEAR accounts with full support for balances, sends, swaps, spending policies, and multi approval workflows.",
+      "The wallet abstracts away the complexity of NEAR account management by exposing a clean custody layer where users can create sub-accounts, set spending policies, and route transactions through approval chains. This makes it suitable for both personal treasury management and team-based multi-signer setups.",
+      "Built with React and Vite, the frontend uses a dark terminal-inspired aesthetic with lime green accents. The backend runs on Cloudflare Workers with encrypted KV storage powered by a TEE-based key manager for secure key derivation. All sensitive operations go through the Key Manager's CKD-based hierarchical key generation.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "NEAR Protocol",
+      "Cloudflare Workers",
+      "TEE",
+    ],
+    featured: true,
+    demoUrl: "https://wallet.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/outlayer-wallet",
+  },
+  {
+    id: "fintrack",
+    title: "Fintrack",
+    description:
+      "Personal portfolio tracker for stocks and crypto with real-time market data and terminal aesthetic",
+    longDescription: [
+      "Fintrack is a personal portfolio tracker that aggregates stocks and crypto positions into a single terminal-style dashboard. It pulls real-time market data from Finnhub for equities and Binance for cryptocurrencies, displaying live prices, P&L, and asset allocation.",
+      "The web app uses a dark terminal aesthetic with lime green accents, designed mobile-first with a max-width layout that feels native on phones. It features a watchlist screener, interactive candlestick charts with order book depth, and a tape feed for real-time trades.",
+      "All API calls route through Cloudflare Workers proxy endpoints to handle CORS and keep API keys server-side. The Binance integration uses both REST polling and WebSocket streams for live ticker updates, while Finnhub provides real-time stock quotes.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Cloudflare Pages",
+      "Finnhub",
+      "Binance API",
+    ],
+    featured: true,
+    demoUrl: "https://fin.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/fintrack-ts",
+  },
+  {
+    id: "legion-social",
+    title: "Legion Social",
+    description:
+      "Social platform for NEAR builders with AI chat, builder directory, and project management",
+    longDescription: [
+      "Legion Social is a platform for NEAR ecosystem builders that provides AI chat, builder directory, and project management capabilities. I built this as a main contributor during a NEARCON hackathon.",
+      "I leveraged the FastKV protocol for storing and retrieving key-value data on NEAR blockchain. This approach requires only transaction fees, not storage deposits. I also developed near-balancer, a round-robin RPC load balancer that distributes requests across multiple endpoints for improved reliability and reduced rate limiting. Both systems integrate to enable instant project updates and social graph features.",
+      "The platform includes AI chat powered by NEAR AI Cloud's GLM-4.6 model with streaming responses and NEAR-specific context. The builder directory allows browsing NEAR Legion NFT holders, viewing profiles, and seeing project showcases. Data syncs from blockchain to D1 database via sync scripts.",
+      "Frontend uses React 19, TanStack Router/Query, Tailwind CSS v4, and shadcn/ui. Backend uses Hono.js, Drizzle ORM with D1, Better-Auth, and better-near-auth. Integrations include NEAR AI Cloud, NEAR Social, NEARBlocks API, FastData, and OutLayer payment keys.",
+    ],
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Hono.js",
+      "Drizzle ORM",
+      "NEAR Protocol",
+      "Tailwind CSS v4",
+      "AI Integration",
+    ],
+    featured: false,
+    demoUrl: "https://near-agent.pages.dev/",
+    githubUrl: "https://github.com/NEARBuilders/cyborg",
+  },
+  {
+    id: "nullclaw",
+    title: "NullClaw",
+    description:
+      "AI assistant infrastructure in Zig - forked to learn about systems programming and experimentation",
+    longDescription: [
+      "Forked NullClaw to learn about systems programming, AI infrastructure design, and experimentation methods. NullClaw is an AI assistant infrastructure written in Zig with a compact 678 KB binary that boots in under 2 milliseconds and runs on any hardware with a CPU.",
+      "The architecture was built to let me explore agent harness systems and experiment with different performance optimizations and tool integrations. It supports 22+ AI providers and 18 messaging channels, with various tools for AI agents using hybrid vector+FTS5 memory with SQLite.",
+      "Every subsystem is implemented as a vtable interface—providers, channels, tools, memory, tunnels, peripherals, observers, and runtimes—making everything pluggable and swappable via configuration without code changes. This includes a custom memory system with SQLite, vector embeddings, cosine similarity search, FTS5 keyword search, and hybrid merging for context management.",
+      "Looking ahead, there are several directions I'd like to explore further, such as adding more AI providers, improving monitoring for performance analysis, expanding peripheral support, or experimenting with different agent orchestration patterns.",
+    ],
+    technologies: [
+      "Zig",
+      "Systems Programming",
+      "AI Infrastructure",
+      "Testing & Experimentation",
+      "Low-Level Optimization",
+    ],
+    featured: false,
+    demoUrl: "https://github.com/kampouse/nullclaw",
+    githubUrl: "https://github.com/kampouse/nullclaw",
+  },
+  {
+    id: "key-manager",
+    title: "Key Manager (TEE)",
+    description:
+      "OutLayer TEE Key Manager - Encrypted KV storage with CKD-based keys",
+    longDescription: [
+      "The fundamental challenge: how to store private data on a public ledger without exposing sensitive information. Traditional blockchains are transparent by design, but real-world applications need to keep certain data private while still leveraging blockchain's trust and immutability.",
+      "This Key Manager solves that problem using Trusted Execution Environments (TEE). TEEs provide hardware-isolated secure enclaves where code and data are protected from the rest of the system. Keys are generated and used within these secure enclaves, ensuring they never leave protected memory in plaintext.",
+      "The system implements encrypted key-value storage with Child Key Derivation (CKD) for hierarchical key generation. This allows applications to derive multiple keys from a single master key while maintaining security boundaries between different data domains. Built entirely in Rust for memory safety and security guarantees.",
+    ],
+    technologies: ["Rust", "TEE", "Cryptography", "Key Derivation", "NEAR"],
+    featured: true,
+    demoUrl: "https://github.com/Kampouse/key-manager",
+    githubUrl: "https://github.com/Kampouse/key-manager",
+  },
+  {
+    id: "near-starter-kit",
+    title: "NEAR Starter Kit",
+    description:
+      "Production-ready NEAR dApp starter with React 19 + Tailwind v4",
+    longDescription: [
+      "The hardest part of building a new dApp isn't writing the smart contracts or the frontend—it's finding the right tools and figuring out how to integrate them together. Wallet connection, state management, deployment, and styling libraries all need to play nicely, but documentation rarely covers how to wire everything up from scratch.",
+      "I built this NEAR Starter Kit to solve exactly that problem. It provides a complete, production-ready foundation with React 19, TypeScript, Tailwind CSS v4, Hot Labs wallet integration, TanStack Query, and Cloudflare Pages deployment—all pre-configured and tested together.",
+      "Now when I want to build a new application on NEAR, I can start coding features immediately instead of spending hours setting up the toolchain. Everything just works, so I know exactly where to start from every time.",
+    ],
+    technologies: [
+      "TypeScript",
+      "React 19",
+      "NEAR Protocol",
+      "Tailwind CSS v4",
+      "Cloudflare Pages",
+    ],
+    featured: true,
+    demoUrl: "https://near-starter-kit.pages.dev/",
+    githubUrl: "https://github.com/Kampouse/near-starter-kit",
+  },
+  {
+    id: "vibe-paper",
+    title: "Vibe Paper",
+    description:
+      "Speculative AI memory systems - exploratory research concepts",
+    longDescription: [
+      "A collection of exploratory ideas exploring AI memory systems and long-term context in large language models. This is not production code or fully working implementations—these are speculative concepts inspired by research papers, meant as starting points for actual research rather than polished solutions.",
+      "The core concept, Compact Context Model (CCM), proposes a graph-based approach to handling long-term context by extracting the decisional structure of conversations while discarding the rest. The goal is to potentially reduce token usage by 80-90% while preserving what actually matters for decision-making.",
+      "These ideas emerged from exploring research on long-term memory for AI systems, context compression techniques, graph-based knowledge representation, and agent learning systems. The philosophy is simple: sometimes you need to throw ideas at a wall and see what sticks. This is that wall.",
+      "Reality check: no working code, no benchmarks, no rigorous evaluation. But these are interesting ideas written down as concept papers, potential research directions, and speculative architectures that could inform real implementations down the line.",
+    ],
+    technologies: [
+      "Python",
+      "LLM",
+      "Memory Systems",
+      "Research",
+      "Graph Theory",
+    ],
+    featured: true,
+    demoUrl: "https://github.com/Kampouse/vibe-paper",
+    githubUrl: "https://github.com/Kampouse/vibe-paper",
+  },
+  {
+    id: "nostr-docs",
+    title: "Nostr Docs",
+    description:
+      "Comprehensive documentation site for the Nostr protocol — guides, NIPs, and developer resources",
+    longDescription: [
+      "Nostr Docs is a comprehensive documentation site built to help developers understand and build on the Nostr decentralized social protocol. It covers everything from the fundamentals of how Nostr works to detailed developer guides for implementing NIPs (Nostr Implementation Possibilities).",
+      "The site is built with Astro Starlight, providing a fast, accessible, and search-optimized documentation experience with full-text search, dark mode, and a responsive sidebar navigation. Content is written in MDX, allowing interactive components alongside standard documentation.",
+      "Topics covered include keys and identity, how relays work, publishing your first note, NIP references, and practical development guides. The documentation aims to be the go-to resource for anyone building on Nostr, from beginners understanding the protocol to advanced developers implementing custom NIPs.",
+    ],
+    technologies: [
+      "Astro",
+      "Starlight",
+      "MDX",
+      "Cloudflare Pages",
+      "TypeScript",
+    ],
+    featured: true,
+    demoUrl: "https://nostr.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/nostr-docs",
+  },
+  {
+    id: "nostrlink",
+    title: "NostrLink",
+    description:
+      "Professional network built on Nostr — profiles, job postings, and verifiable credentials",
+    longDescription: [
+      "NostrLink is a professional networking platform built on the Nostr protocol, offering a decentralized alternative to LinkedIn. Users create profiles, publish professional content, post job listings, and build verifiable professional identities using Nostr's cryptographic foundations.",
+      "The platform leverages Nostr's decentralized architecture to give users full ownership of their professional identity. No central authority controls profiles or connections — everything is cryptographically signed and portable across relays. Professional credentials and work history can be verified through Nostr's event-based system.",
+      "Built with React and Vite, the frontend uses a clean dark-themed interface with emerald green accents. The app integrates with Nostr relays for real-time feed updates, NIP-05 verification for identity, and wallet extensions for signing — no private keys are ever exposed to the application.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Nostr",
+      "Cloudflare Pages",
+    ],
+    featured: true,
+    demoUrl: "https://in.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/nostr-linkedin",
+  },
+  {
+    id: "just-rnd",
+    title: "Just R&D",
+    description:
+      "The alternative to the traditional Meetup platform for like-minded professionals",
+    longDescription: [
+      "Just R&D is a unique coworking space platform designed for individuals who think differently. It provides an alternative way to connect and collaborate with like-minded professionals.",
+      "The platform focuses on creating an environment where innovation and creative thinking can thrive, while maintaining a comfortable space for focused work and collaboration.",
+    ],
+    technologies: [
+      "Qwik",
+      "TypeScript",
+      "Node.js",
+      "Turso",
+      "sqlite",
+      "TailwindCss",
+    ],
+    featured: false,
+    demoUrl: "https://space.justrnd.com",
+    githubUrl: "https://github.com/Kampouse/study-hack",
+  },
+  {
+    id: "near-balancer",
+    title: "NEAR Balancer",
+    description:
+      "High-performance NEAR RPC client with round-robin load balancing, automatic retry, and rate limit handling",
+    longDescription: [
+      "NEAR Balancer is a zero-dependency RPC client for the NEAR blockchain that distributes requests across multiple public endpoints using round-robin rotation. It solves the common pain points of NEAR development: rate limiting from public RPCs, unreliable endpoints, and slow response times during heavy usage.",
+      "The client automatically rotates through 5 mainnet endpoints (Official NEAR, Lava Network, BlockPI, dRPC, and Omnia) on each request, and if one fails it retries the next with exponential backoff. This means rate limit errors (429) are handled gracefully by simply rotating to the next endpoint, rather than failing the entire operation.",
+      "Built in pure TypeScript with zero dependencies beyond native fetch, it works cross-platform on Node.js, Bun, Deno, and browsers. It includes helper functions for common operations like NFT view calls and account balance queries, plus configurable retry counts, timeouts, and custom endpoint lists for production deployments.",
+    ],
+    technologies: ["TypeScript", "NEAR Protocol", "RPC", "Load Balancing"],
+    featured: true,
+    demoUrl: "https://www.npmjs.com/package/near-balancer",
+    githubUrl: "https://github.com/Kampouse/near-balancer",
+  },
+];

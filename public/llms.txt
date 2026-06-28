@@ -59,7 +59,7 @@ Research project on compact, retrieval-augmented multi-agent memory systems usin
 
 ## Links
 
-- Website: https://www.jemartel.dev
+- Website: https://jemartel.dev
 - GitHub: https://github.com/Kampouse
 - Email: jp@jemartel.dev
 - Location: Montreal, Canada
