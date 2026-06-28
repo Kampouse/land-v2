@@ -14,6 +14,8 @@ import NullClaw from "~/assets/nullclaw.jpg?jsx";
 import OGNullClaw from "~/assets/nullclaw.jpg";
 import Gork from "~/assets/gork-robot.jpg?jsx";
 import OGGork from "~/assets/gork-robot.jpg";
+import NearBalancer from "~/assets/near-balancer.jpg?jsx";
+import OGNearBalancer from "~/assets/near-balancer.jpg";
 import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
 import Vibe from "~/assets/vibe.jpg?jsx";
@@ -320,26 +322,23 @@ export const projects = [
     githubUrl: "https://github.com/Kampouse/study-hack",
   },
   {
-    id: "gork-protocol",
-    title: "Gork Protocol",
+    id: "near-balancer",
+    title: "NEAR Balancer",
     description:
-      "P2P communication system between AI agents using blockchain as trust layer",
+      "High-performance NEAR RPC client with round-robin load balancing, automatic retry, and rate limit handling",
     longDescription: [
-      "Gork is a research project exploring decentralized AI agent collaboration. The goal is to enable AI agents to discover each other, verify reputation on-chain, and collaborate directly via P2P without centralized platforms. Following the Agent Skills open standard, the protocol investigates how agents could share capabilities, execute tasks, and build trust in a decentralized network.",
-      "The research proposes a two-layer architecture: Trust layer (NEAR blockchain) for identity verification, reputation scores (0-100), skill registration, and historical ratings; Collaboration layer (P2P network) for direct agent-to-agent task execution, Agent Skills compatibility, end-to-end encrypted messaging, and natural conversation flow.",
-      "Real-world usage would feel like a trustworthy freelance marketplace for AI agents. You could discover agents by capability—'Hey alice.near, I saw you have a csv-analyzer skill. Can you help me analyze my Q4 sales data?'—verify their reputation on NEAR blockchain before collaborating, then execute tasks directly via P2P and rate them afterward.",
-      "The implementation explores Agent Skills standard (agentskills.io) for cross-platform compatibility, relay server for NAT traversal and P2C connectivity, P2C load balancing algorithm (same as HAProxy) for distributed network efficiency, comprehensive CLI for agent management, and enterprise-grade security with X25519 key exchange, ChaCha20-Poly1305 encryption, and Ed25519 signatures.",
-      "This research project explores an ambitious goal: to create a network that's always alive, like blockchain itself. Unlike traditional centralized AI platforms that can shut down or change policies, Gork's trust layer on NEAR blockchain would ensure that agents, their reputations, and their capabilities persist indefinitely. The network would stay alive as long as agents are running and blockchain exists, creating a truly decentralized and resilient foundation for AI agent collaboration.",
-      "Built entirely in Rust for maximum performance and security, Gork solves the problem of platform lock-in in AI development. You choose who you work with, see real reputation scores verified on-chain, own your portable reputation across platforms, and pay for results rather than API calls.",
+      "NEAR Balancer is a zero-dependency RPC client for the NEAR blockchain that distributes requests across multiple public endpoints using round-robin rotation. It solves the common pain points of NEAR development: rate limiting from public RPCs, unreliable endpoints, and slow response times during heavy usage.",
+      "The client automatically rotates through 5 mainnet endpoints (Official NEAR, Lava Network, BlockPI, dRPC, and Omnia) on each request, and if one fails it retries the next with exponential backoff. This means rate limit errors (429) are handled gracefully by simply rotating to the next endpoint, rather than failing the entire operation.",
+      "Built in pure TypeScript with zero dependencies beyond native fetch, it works cross-platform on Node.js, Bun, Deno, and browsers. It includes helper functions for common operations like NFT view calls and account balance queries, plus configurable retry counts, timeouts, and custom endpoint lists for production deployments.",
     ],
-    image: Gork,
-    ogImage: OGGork,
-    imageAlt: "Gork Protocol - P2P Agent Communication",
-    technologies: ["Rust", "NEAR Protocol", "P2P", "libp2p", "Cryptography"],
+    image: NearBalancer,
+    ogImage: OGNearBalancer,
+    imageAlt: "NEAR Balancer - Round-Robin RPC Load Balancer",
+    technologies: ["TypeScript", "NEAR Protocol", "RPC", "Load Balancing"],
     featured: true,
     images: [],
-    demoUrl: "https://github.com/Kampouse/gork-protocol",
-    githubUrl: "https://github.com/Kampouse/gork-protocol",
+    demoUrl: "https://www.npmjs.com/package/near-balancer",
+    githubUrl: "https://github.com/Kampouse/near-balancer",
   },
 ];
 export type Project = {
