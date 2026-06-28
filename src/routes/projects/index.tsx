@@ -57,6 +57,63 @@ export const projects = [
     githubUrl: "",
   },
   {
+    id: "outlayer-wallet",
+    title: "OutLayer Wallet",
+    description:
+      "Multi-wallet custody manager for NEAR Protocol — balances, sends, swaps, policies, and approvals",
+    longDescription: [
+      "OutLayer Wallet is a multi-wallet custody manager built for the NEAR Protocol. It provides a unified interface for managing multiple NEAR accounts with full support for balances, sends, swaps, spending policies, and multi approval workflows.",
+      "The wallet abstracts away the complexity of NEAR account management by exposing a clean custody layer where users can create sub-accounts, set spending policies, and route transactions through approval chains. This makes it suitable for both personal treasury management and team-based multi-signer setups.",
+      "Built with React and Vite, the frontend uses a dark terminal-inspired aesthetic with lime green accents. The backend runs on Cloudflare Workers with encrypted KV storage powered by a TEE-based key manager for secure key derivation. All sensitive operations go through the Key Manager's CKD-based hierarchical key generation.",
+    ],
+    image: OutLayerWallet,
+    ogImage: OGOutLayerWallet,
+    imageAlt: "OutLayer Wallet - NEAR Multi-Wallet Custody Manager",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "NEAR Protocol",
+      "Cloudflare Workers",
+      "TEE",
+    ],
+    featured: true,
+    images: [
+      {
+        src: OutLayerWalletGallery,
+        alt: "OutLayer Wallet - Send flow",
+      },
+    ],
+    demoUrl: "https://wallet.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/outlayer-wallet",
+  },
+  {
+    id: "fintrack",
+    title: "Fintrack",
+    description:
+      "Personal portfolio tracker for stocks and crypto with real-time market data and terminal aesthetic",
+    longDescription: [
+      "Fintrack is a personal portfolio tracker that aggregates stocks and crypto positions into a single terminal-style dashboard. It pulls real-time market data from Finnhub for equities and Binance for cryptocurrencies, displaying live prices, P&L, and asset allocation.",
+      "The web app uses a dark terminal aesthetic with lime green accents, designed mobile-first with a max-width layout that feels native on phones. It features a watchlist screener, interactive candlestick charts with order book depth, and a tape feed for real-time trades.",
+      "All API calls route through Cloudflare Workers proxy endpoints to handle CORS and keep API keys server-side. The Binance integration uses both REST polling and WebSocket streams for live ticker updates, while Finnhub provides real-time stock quotes.",
+    ],
+    image: Fintrack,
+    ogImage: OGFintrack,
+    imageAlt: "Fintrack - Personal Portfolio Tracker",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Cloudflare Pages",
+      "Finnhub",
+      "Binance API",
+    ],
+    featured: true,
+    images: [],
+    demoUrl: "https://fin.jemartel.dev",
+    githubUrl: "https://github.com/Kampouse/fintrack-ts",
+  },
+  {
     id: "nullclaw",
     title: "NullClaw",
     description:
@@ -180,63 +237,6 @@ export const projects = [
     images: [],
     demoUrl: "https://github.com/Kampouse/vibe-paper",
     githubUrl: "https://github.com/Kampouse/vibe-paper",
-  },
-  {
-    id: "outlayer-wallet",
-    title: "OutLayer Wallet",
-    description:
-      "Multi-wallet custody manager for NEAR Protocol — balances, sends, swaps, policies, and approvals",
-    longDescription: [
-      "OutLayer Wallet is a multi-wallet custody manager built for the NEAR Protocol. It provides a unified interface for managing multiple NEAR accounts with full support for balances, sends, swaps, spending policies, and multi approval workflows.",
-      "The wallet abstracts away the complexity of NEAR account management by exposing a clean custody layer where users can create sub-accounts, set spending policies, and route transactions through approval chains. This makes it suitable for both personal treasury management and team-based multi-signer setups.",
-      "Built with React and Vite, the frontend uses a dark terminal-inspired aesthetic with lime green accents. The backend runs on Cloudflare Workers with encrypted KV storage powered by a TEE-based key manager for secure key derivation. All sensitive operations go through the Key Manager's CKD-based hierarchical key generation.",
-    ],
-    image: OutLayerWallet,
-    ogImage: OGOutLayerWallet,
-    imageAlt: "OutLayer Wallet - NEAR Multi-Wallet Custody Manager",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "NEAR Protocol",
-      "Cloudflare Workers",
-      "TEE",
-    ],
-    featured: true,
-    images: [
-      {
-        src: OutLayerWalletGallery,
-        alt: "OutLayer Wallet - Send flow",
-      },
-    ],
-    demoUrl: "https://wallet.jemartel.dev",
-    githubUrl: "https://github.com/Kampouse/outlayer-wallet",
-  },
-  {
-    id: "fintrack",
-    title: "Fintrack",
-    description:
-      "Personal portfolio tracker for stocks and crypto with real-time market data and terminal aesthetic",
-    longDescription: [
-      "Fintrack is a personal portfolio tracker that aggregates stocks and crypto positions into a single terminal-style dashboard. It pulls real-time market data from Finnhub for equities and Binance for cryptocurrencies, displaying live prices, P&L, and asset allocation.",
-      "The web app uses a dark terminal aesthetic with lime green accents, designed mobile-first with a max-width layout that feels native on phones. It features a watchlist screener, interactive candlestick charts with order book depth, and a tape feed for real-time trades.",
-      "All API calls route through Cloudflare Workers proxy endpoints to handle CORS and keep API keys server-side. The Binance integration uses both REST polling and WebSocket streams for live ticker updates, while Finnhub provides real-time stock quotes.",
-    ],
-    image: Fintrack,
-    ogImage: OGFintrack,
-    imageAlt: "Fintrack - Personal Portfolio Tracker",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Cloudflare Pages",
-      "Finnhub",
-      "Binance API",
-    ],
-    featured: true,
-    images: [],
-    demoUrl: "https://fin.jemartel.dev",
-    githubUrl: "https://github.com/Kampouse/fintrack-ts",
   },
   {
     id: "nostr-docs",
