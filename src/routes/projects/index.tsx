@@ -20,6 +20,7 @@ import Vibe from "~/assets/vibe.jpg?jsx";
 import OGVibe from "~/assets/vibe.jpg";
 import OutLayerWallet from "~/assets/outlayer-wallet.jpg?jsx";
 import OGOutLayerWallet from "~/assets/outlayer-wallet.jpg";
+import OutLayerWalletGallery from "~/assets/outlayer-wallet-2.jpg";
 import Fintrack from "~/assets/fintrack.jpg?jsx";
 import OGFintrack from "~/assets/fintrack.jpg";
 
@@ -198,7 +199,12 @@ export const projects = [
       "TEE",
     ],
     featured: true,
-    images: [],
+    images: [
+      {
+        src: OutLayerWalletGallery,
+        alt: "OutLayer Wallet - Send flow",
+      },
+    ],
     demoUrl: "https://wallet.jemartel.dev",
     githubUrl: "https://github.com/Kampouse/outlayer-wallet",
   },
