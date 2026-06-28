@@ -75,7 +75,7 @@ export const head: DocumentHead = {
     },
     {
       name: "og:url",
-      content: "https://www.jemartel.dev",
+      content: "https://jemartel.dev",
     },
     {
       name: "twitter:card",
@@ -99,7 +99,7 @@ export const head: DocumentHead = {
     {
       rel: "alternate",
       type: "text/plain",
-      href: "https://www.jemartel.dev/llms.txt",
+      href: "https://jemartel.dev/llms.txt",
     },
   ],
   scripts: [
@@ -109,7 +109,7 @@ export const head: DocumentHead = {
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Jean Martel",
-        url: "https://www.jemartel.dev",
+        url: "https://jemartel.dev",
         email: "jp@jemartel.dev",
         jobTitle: "AI-Native Full-Stack Engineer",
         address: {
