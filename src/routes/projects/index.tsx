@@ -20,8 +20,8 @@ import Vibe from "~/assets/vibe.jpg?jsx";
 import OGVibe from "~/assets/vibe.jpg";
 import OutLayerWallet from "~/assets/outlayer-wallet.png?jsx";
 import OGOutLayerWallet from "~/assets/outlayer-wallet.png";
-import Fintrack from "~/assets/fintrack.png?jsx";
-import OGFintrack from "~/assets/fintrack.png";
+import Fintrack from "~/assets/fintrack.jpg?jsx";
+import OGFintrack from "~/assets/fintrack.jpg";
 
 export const projects = [
   // ============ NEW FEATURED PROJECTS ============
