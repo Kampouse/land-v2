@@ -18,8 +18,8 @@ import SevenGen from "~/assets/7gen.jpg?jsx";
 import OGSevenGen from "~/assets/7gen.jpg";
 import Vibe from "~/assets/vibe.jpg?jsx";
 import OGVibe from "~/assets/vibe.jpg";
-import OutLayerWallet from "~/assets/outlayer-wallet.png?jsx";
-import OGOutLayerWallet from "~/assets/outlayer-wallet.png";
+import OutLayerWallet from "~/assets/outlayer-wallet.jpg?jsx";
+import OGOutLayerWallet from "~/assets/outlayer-wallet.jpg";
 import Fintrack from "~/assets/fintrack.jpg?jsx";
 import OGFintrack from "~/assets/fintrack.jpg";
 
