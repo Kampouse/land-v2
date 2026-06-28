@@ -14,8 +14,7 @@ export const IntroSection = component$(() => {
             </span>
           </h1>
           <p class="max-w-2xl px-2 text-center text-base leading-relaxed text-gray-400 sm:text-lg">
-            Building AI infrastructure and vertical solutions with emerging
-            technologies.
+            AI-native builder. I ship production systems, not demos.
           </p>
         </div>
       </div>
