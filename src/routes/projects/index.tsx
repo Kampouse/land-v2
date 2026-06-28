@@ -114,33 +114,6 @@ export const projects = [
     githubUrl: "https://github.com/Kampouse/fintrack-ts",
   },
   {
-    id: "nullclaw",
-    title: "NullClaw",
-    description:
-      "AI assistant infrastructure in Zig - forked to learn about systems programming and experimentation",
-    longDescription: [
-      "Forked NullClaw to learn about systems programming, AI infrastructure design, and experimentation methods. NullClaw is an AI assistant infrastructure written in Zig with a compact 678 KB binary that boots in under 2 milliseconds and runs on any hardware with a CPU.",
-      "The architecture was built to let me explore agent harness systems and experiment with different performance optimizations and tool integrations. It supports 22+ AI providers and 18 messaging channels, with various tools for AI agents using hybrid vector+FTS5 memory with SQLite.",
-      "Every subsystem is implemented as a vtable interface—providers, channels, tools, memory, tunnels, peripherals, observers, and runtimes—making everything pluggable and swappable via configuration without code changes. This includes a custom memory system with SQLite, vector embeddings, cosine similarity search, FTS5 keyword search, and hybrid merging for context management.",
-      "Looking ahead, there are several directions I'd like to explore further, such as adding more AI providers, improving monitoring for performance analysis, expanding peripheral support, or experimenting with different agent orchestration patterns.",
-    ],
-
-    imageAlt: "NullClaw - AI Assistant Infrastructure in Zig",
-    technologies: [
-      "Zig",
-      "Systems Programming",
-      "AI Infrastructure",
-      "Testing & Experimentation",
-      "Low-Level Optimization",
-    ],
-    featured: false,
-    images: [],
-    demoUrl: "https://github.com/kampouse/nullclaw",
-    githubUrl: "https://github.com/kampouse/nullclaw",
-    image: NullClaw,
-    ogImage: OGNullClaw,
-  },
-  {
     id: "legion-social",
     title: "Legion Social",
     description:
@@ -167,6 +140,33 @@ export const projects = [
     images: [],
     demoUrl: "https://near-agent.pages.dev/",
     githubUrl: "https://github.com/NEARBuilders/cyborg",
+  },
+  {
+    id: "nullclaw",
+    title: "NullClaw",
+    description:
+      "AI assistant infrastructure in Zig - forked to learn about systems programming and experimentation",
+    longDescription: [
+      "Forked NullClaw to learn about systems programming, AI infrastructure design, and experimentation methods. NullClaw is an AI assistant infrastructure written in Zig with a compact 678 KB binary that boots in under 2 milliseconds and runs on any hardware with a CPU.",
+      "The architecture was built to let me explore agent harness systems and experiment with different performance optimizations and tool integrations. It supports 22+ AI providers and 18 messaging channels, with various tools for AI agents using hybrid vector+FTS5 memory with SQLite.",
+      "Every subsystem is implemented as a vtable interface—providers, channels, tools, memory, tunnels, peripherals, observers, and runtimes—making everything pluggable and swappable via configuration without code changes. This includes a custom memory system with SQLite, vector embeddings, cosine similarity search, FTS5 keyword search, and hybrid merging for context management.",
+      "Looking ahead, there are several directions I'd like to explore further, such as adding more AI providers, improving monitoring for performance analysis, expanding peripheral support, or experimenting with different agent orchestration patterns.",
+    ],
+
+    imageAlt: "NullClaw - AI Assistant Infrastructure in Zig",
+    technologies: [
+      "Zig",
+      "Systems Programming",
+      "AI Infrastructure",
+      "Testing & Experimentation",
+      "Low-Level Optimization",
+    ],
+    featured: false,
+    images: [],
+    demoUrl: "https://github.com/kampouse/nullclaw",
+    githubUrl: "https://github.com/kampouse/nullclaw",
+    image: NullClaw,
+    ogImage: OGNullClaw,
   },
   {
     id: "key-manager",
