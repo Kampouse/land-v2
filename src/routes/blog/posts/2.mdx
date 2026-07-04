@@ -1,57 +1,79 @@
 ---
-title: The "MERN" vibe
-description: how to face webs techs
-date: 2024-01-01
-tags:
-  - coding
-  - rant
-  - docs
+title: The Alt-Web
+date: 2026-07-03
+description: The web we use is just one option
+tag: Web
+og:
+  image: https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F52e1c53e64c143ecbad783690657996c
+  image:alt: The web we use is just one option
 ---
 
-# Modern Web Development
+# staring at the ceiling
 
-The landscape of web development is constantly evolving. Let's explore some current best practices and patterns.
+every day you open google and you open a website but do you really know what happen after you uploaded something in a form where will this data go? <br/>
+how do we aggregate data on your google feed? why do we use email as the passport to represent who we are. <br/>
+we live in this idea that the web is like this: http, https, onions <br/>
+but these are just ways to represent a data transport... not how the data is actually stored. <br/>
+your data could be in a sql, a nosql, even a json like mongoDB. <br/>
+ok but data is now somewhere in a server but who really has access to it? <br/>
+by default we would consider the "operator or the owner of the database". <br/>
+yes that works for big tech... but is there any innovation that exist in the space to do that differently? <br/>
+you can think of p2p systems where everyone has some form of the data hosted on their device <br/>
+that works but is it really an alternative? not really...
 
-Breaking down large applications into smaller, manageable pieces:
+## if there is a clear web and a dark web
 
-```typescript
-// Example of a micro-frontend setup
-const App = () => {
-  return (
-    <div>
-      <MicroFrontend name="header" host={headerHost} />
-      <MicroFrontend name="content" host={contentHost} />
-      <MicroFrontend name="footer" host={footerHost} />
-    </div>
-  );
-};
-```
+would there not be an alt-web? <br/>
+bound by the same data rules as above but with a different mental model of what can exist in the context of data. <br/>
 
-### Server Components
+think of the current web as a hotel. <br/>
+you check in with an email and a password. you store your stuff in their room. when you leave they keep everything. <br/>
+the alt-web is an apartment you own. <br/>
+the building doesn't own your furniture. you can move between buildings and your stuff comes with you.
 
-The future of React with server components:
+## what everyone agrees on
 
-```jsx
-// Server Component
-async function BlogPosts() {
-  const posts = await db.posts.findMany();
-  return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </ul>
-  );
-}
-```
+data should be owned by its creator. <br/>
+interfaces are just a medium that can evolve over time and should not be bound to the interface. <br/>
 
-## Performance Optimization
+this isn't even a new idea. email already works like this. your @gmail isn't your identity. the email itself is. you can read it from any client. send it from any device. switch providers and keep your address. <br/>
+the question is how do we extend that to everything else.
 
-- Code splitting
-- Tree shaking
-- Image optimization
-- Cache strategies
+## three answers to the same question
 
-## Future Trends
+a few protocols are trying to build this alt-web. they all want the same thing: user-owned data, portable identity, no single point of failure. but they disagree on how to get there.
 
-Stay tuned as we explore more modern web development concepts!
+### nostr: relay gossip
+
+simplest approach. you have a keypair. you sign events, posts, follows, messages, anything. you publish them to relays which are just websocket servers that forward what they receive. clients subscribe and render whatever they find. <br/>
+no accounts. no passwords. no servers you own. just keys and events flowing through dumb pipes. <br/>
+relays can't modify your data because it's signed. new features are added as NIPs, optional extensions that any app can adopt. payments? NIP-57. encrypted DMs? NIP-44. remote signing? NIP-46. <br/>
+the catch: relays are ephemeral. they can prune your data. there's no built-in indexing so discovery is chaotic. you're relying on relay operators to keep your history alive.
+
+### at protocol: federated repos
+
+built by bluesky. you get a Personal Data Server (PDS) which is basically your own email server but for social data. data is structured with Lexicons, typed JSON schemas. AppViews aggregate and index data from multiple PDSs to create feeds and timelines. <br/>
+your identity is a DID. you can move your repo between PDS providers. the data is rich, not just "a post" but typed objects any app can interpret. <br/>
+it actually works at scale. millions of users on bluesky are already on the AT Protocol without knowing it. <br/>
+the catch: still heavily centralized. bluesky runs the main PDC and the primary AppView. self-hosting is possible but not practical. the stack is complex, repos, PDSs, AppViews, BGS, more moving parts than nostr has total concepts.
+
+### pubky: per-key backend
+
+the newest. each public key gets its own key-value store. PUT, GET, DELETE over HTTP. no relays, no federated servers, no AppViews. you talk directly to a homeserver. <br/>
+pubky replaces DNS with PKArr, your domain resolves from your key not from a registrar. no one can seize your domain because there's no registrar to seize it from. <br/>
+every user is a backend. apps read from your store. you control what they see. <br/>
+the catch: it's still unproven. the homeserver model means someone has to run the infra. the raw key-value store gives you structure but not meaning, you build the schema yourself. no killer app yet that makes you go "I need this".
+
+## the trap
+
+the alt-web is invisible. you can't tell from the outside whether an app uses nostr or AWS. <br/>
+users don't switch protocols. they switch apps. they don't care where their data lives. they care that the app works. <br/>
+so the alt-web needs apps that are simply better. not just more decentralized.
+
+## i built a door
+
+last week i deployed a [NIP-46 demo](https://nip46-connect-demo.pages.dev). a regular website on cloudflare pages where you authenticate via a nostr signer instead of email and password. <br/>
+your keys never touch the browser. the website never sees your private key. it just gets permission to sign events on your behalf. <br/>
+this is the bridge. a normal website. normal hosting. but the identity layer is alt-web. no migration needed. no new protocol to explain to users. just a QR code scan and you're in.
+
+the ceiling is still there. but now there's a door.
